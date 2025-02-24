@@ -1,21 +1,65 @@
-function Coach({name, location, rate, tagline}) {
+import React from "react";
+import Navbar from "./Navbar.jsx"
+
+function CoachCard({name,sportType, bio, rate}) {
   return (
-    <div>
-        <p>Welcome to the coaching session! How can I assist you today?</p>
-        <p>Name: {name}</p>
-        <p>Location: {location}</p>
-        <p>Rate: {rate}</p>
-        <p>Tagline: {tagline}</p>
-    </div>
+  <div className="border p-4 bg-white rounded shadow-md">
+  <div className="h-24 bg-gray-300 flex items-center justify-center">
+    Profile Photo
+  </div>
+  <h4 className="font-bold mt-2">{name}</h4>
+  <p>{sportType} | Specialty</p>
+  <p>{bio}</p>
+  <p>Rate: ${rate}/hr</p>
+  <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded">
+    View Details
+  </button>
+</div>
   )
 }
 
-export default function CoachArray() {
-    return (
-        <div>
-            <Coach name="John Doe" location="New York" rate="$100/hour" tagline="Your personal coach for success!" />
-            <Coach name="Jane Smith" location="Los Angeles" rate="$150/hour" tagline="Empowering you to reach your goals!" />
-            <Coach name="Mike Johnson" location="Chicago" rate="$120/hour" tagline="Guiding you towards greatness!" />
+export default function CoachListing() {
+  const coaches = [
+    { name: "John Doe", sportType: "Basketball", bio: "Experienced coach", rate: 50 },
+    { name: "Jane Smith", sportType: "Tennis", bio: "Former pro player", rate: 60 },
+    { name: "Alex Johnson", sportType: "Soccer", bio: "Youth trainer", rate: 40 },
+    { name: "Emily Davis", sportType: "Swimming", bio: "Olympic-level coach", rate: 70 },
+    { name: "Chris Brown", sportType: "Football", bio: "Tactical expert", rate: 55 },
+    { name: "Sarah Wilson", sportType: "Golf", bio: "Precision coach", rate: 65 },
+    { name: "Mike Anderson", sportType: "Boxing", bio: "Strength coach", rate: 45 },
+    { name: "Laura Martinez", sportType: "Volleyball", bio: "Team strategy coach", rate: 50 },
+    { name: "David White", sportType: "Track & Field", bio: "Speed coach", rate: 55 }
+  ];
+  return (
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <Navbar />
+      <main className="mt-6">
+        <h2 className="text-2xl font-bold text-center">Best Coaches in Current Geographic Position</h2>
+        <div className="flex justify-center mt-4">
+          <input
+            type="text"
+            placeholder="Search"
+            className="border p-2 rounded w-1/2"
+          />
         </div>
-    )
-}
+
+        {/* Button collection at the top, become drop downs later? */}
+        <div className="flex justify-center space-x-2 mt-4">
+          <button className="px-4 py-2 bg-gray-300 rounded">Type of Sport</button>
+          <button className="px-4 py-2 bg-gray-300 rounded">Specialty</button>
+          <button className="px-4 py-2 bg-gray-300 rounded">Location</button>
+          <button className="px-4 py-2 bg-gray-300 rounded">Rate min</button>
+          <button className="px-4 py-2 bg-gray-300 rounded">Rate max</button>
+          <button className="px-4 py-2 bg-black text-white rounded">Search</button>
+        </div>
+        
+        <h3 className="text-xl font-bold mt-6">Coaches Found:</h3>
+        <div className="grid grid-cols-3 gap-4 mt-4">
+        {coaches.map((coach, index) => (
+            <CoachCard key={index} {...coach} />
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+};
