@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar.jsx"
 
 function CoachCard({name,sportType, bio, rate}) {
   return (
@@ -11,7 +10,7 @@ function CoachCard({name,sportType, bio, rate}) {
   <p>{sportType} | Specialty</p>
   <p>{bio}</p>
   <p>Rate: ${rate}/hr</p>
-  <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded">
+  <button className="mt-2 px-4 py-2 bg-gray-800 text-gray rounded">
     View Details
   </button>
 </div>
@@ -32,7 +31,6 @@ export default function CoachListing() {
   ];
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <Navbar />
       <main className="mt-6">
         <h2 className="text-2xl font-bold text-center">Best Coaches in Current Geographic Position</h2>
         <div className="flex justify-center mt-4">
@@ -54,7 +52,7 @@ export default function CoachListing() {
         </div>
         
         <h3 className="text-xl font-bold mt-6">Coaches Found:</h3>
-        <div className="grid grid-cols-3 gap-4 mt-4">
+        <div className="grid col-span-15 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
         {coaches.map((coach, index) => (
             <CoachCard key={index} {...coach} />
           ))}
