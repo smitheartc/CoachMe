@@ -7,7 +7,7 @@ function CoachCard({name,sportType, bio, rate}) {
     Profile Photo
   </div>
   <h4 className="font-bold mt-2">{name}</h4>
-  <p>{sportType} | Specialty</p>
+  <p>{sportType}</p>
   <p>{bio}</p>
   <p>Rate: ${rate}/hr</p>
   <button className="mt-2 px-4 py-2 bg-gray-800 text-gray rounded">
@@ -48,7 +48,7 @@ export default function CoachListing() {
           <button className="px-4 py-2 bg-gray-300 rounded">Location</button>
           <button className="px-4 py-2 bg-gray-300 rounded">Rate min</button>
           <button className="px-4 py-2 bg-gray-300 rounded">Rate max</button>
-          <button className="px-4 py-2 bg-black text-white rounded">Search</button>
+          <button className="px-4 py-2 bg-black text-blue rounded">Search</button>
         </div>
         
         <h3 className="text-xl font-bold mt-6">Coaches Found:</h3>
