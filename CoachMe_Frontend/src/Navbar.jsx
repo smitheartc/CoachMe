@@ -10,7 +10,9 @@ export default function Navbar() {
           <Link to="/coachfinder" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Find a Coach</Link>
           <Link to="dashboard" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Dashboard</Link>
           <Link to="profile" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Profile</Link>
-          <Link className="px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300">Log out</Link>
+          <div className="hover:text-red">
+          <Link className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Log Out</Link>
+          </div>
         </div>
       </header>
     )

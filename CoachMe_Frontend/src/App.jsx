@@ -10,6 +10,7 @@ import Navbar from "./Navbar.jsx"
 import CoachListing from "../pages/Coach.jsx"
 import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile.jsx';
+import CoachDash from '../pages/CoachDash.jsx';
 
 
 function Main() {
@@ -19,6 +20,8 @@ function Main() {
       <Route path='/coachfinder' element={<CoachListing/>}></Route>
       <Route path='/dashboard' element={<Dashboard/>}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
+      <Route path='/coachdash' element={<CoachDash/>}></Route>
+
     </Routes>
   );
 }
