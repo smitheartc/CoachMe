@@ -13,7 +13,7 @@ import CoachListing from "../pages/Coach.jsx"
 import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile.jsx';
 import CoachDash from '../pages/CoachDash.jsx';
-import ClientCoachView from '../pages/ClientViewCoach'
+import ClientCoachView from '../pages/ClientCoachView'
 
 
 

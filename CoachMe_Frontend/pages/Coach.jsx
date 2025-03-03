@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import {useQuery} from '@tanstack/react-query'
+import {Link} from "react-router-dom"
+
 
 function CoachCard({userID}) { //individual coach cards on the coach listing page
 
@@ -34,9 +36,9 @@ function CoachCard({userID}) { //individual coach cards on the coach listing pag
   <p>{data.data.sportType}</p>
   <p>{data.data.bio}</p>
   <p>Rate: ${data.data.rate}/hr</p>
-  <button className="mt-2 px-4 py-2 bg-gray-800 text-gray rounded">
+  <Link className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" to='/coachview' state={data.data}>
     View Details
-  </button>
+  </Link>
 </div>
   )
 }
