@@ -1,0 +1,18 @@
+{
+    "coaches": [
+        {
+            "userID": 1,
+            "name": "John Doe",
+            "rate": 50,
+            "sportType": "Basketball",
+            "bio": "Experienced coach with a background in fitness and wellness."
+        },
+        {
+            "userId": 2,
+            "name": "Jane Smith",
+            "rate": 60,
+            "sportType": "Golf",
+            "bio": "Certified personal trainer specializing in weight loss and strength training."
+        }
+    ]
+}

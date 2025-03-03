@@ -5,12 +5,16 @@ import './App.css'
 import React from 'react';
 import {BrowserRouter, Router, Routes, Route} from "react-router-dom";
 import Navbar from "./Navbar.jsx"
+import {QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query'
+
 
 //pages
 import CoachListing from "../pages/Coach.jsx"
 import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile.jsx';
 import CoachDash from '../pages/CoachDash.jsx';
+import ClientCoachView from '../pages/ClientViewCoach'
+
 
 
 function Main() {
@@ -21,17 +25,20 @@ function Main() {
       <Route path='/dashboard' element={<Dashboard/>}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/coachdash' element={<CoachDash/>}></Route>
-
+      <Route path='/coachview' element={<ClientCoachView/>}></Route>
     </Routes>
   );
 }
 
 
 function App() {
+  const queryClient = new QueryClient()
   return (
     <>
+      <QueryClientProvider client={queryClient}>
       <Navbar />
       <Main />
+      </QueryClientProvider>
     </>
   )
 }

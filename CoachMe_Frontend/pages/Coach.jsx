@@ -1,15 +1,39 @@
 import React from "react";
+import axios from "axios";
+import {useQuery} from '@tanstack/react-query'
 
-function CoachCard({name,sportType, bio, rate}) {
+function CoachCard({userID}) { //individual coach cards on the coach listing page
+
+  const { isPending, isError, data, error } = useQuery({ //get coach data from backend
+    queryKey: ['key', userID],
+    queryFn: async () => {
+      console.log(userID);
+      const data = await axios.post("http://127.0.0.1:5000/coachFinder/data/", {userID}); //replace URL later
+      return data
+    },
+  })
+
+  if (isPending) {
+    return (
+      <div className="border p-4 bg-white rounded shadow-md">
+      <span>Loading...</span>
+      </div>
+    )
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>
+  }
+
   return (
   <div className="border p-4 bg-white rounded shadow-md">
   <div className="h-24 bg-gray-300 flex items-center justify-center">
     Profile Photo
   </div>
-  <h4 className="font-bold mt-2">{name}</h4>
-  <p>{sportType}</p>
-  <p>{bio}</p>
-  <p>Rate: ${rate}/hr</p>
+  <h4 className="font-bold mt-2">{data.data.name}</h4>
+  <p>{data.data.sportType}</p>
+  <p>{data.data.bio}</p>
+  <p>Rate: ${data.data.rate}/hr</p>
   <button className="mt-2 px-4 py-2 bg-gray-800 text-gray rounded">
     View Details
   </button>
@@ -18,17 +42,6 @@ function CoachCard({name,sportType, bio, rate}) {
 }
 
 export default function CoachListing() {
-  const coaches = [
-    { name: "John Doe", sportType: "Basketball", bio: "Experienced coach", rate: 50 },
-    { name: "Jane Smith", sportType: "Tennis", bio: "Former pro player", rate: 60 },
-    { name: "Alex Johnson", sportType: "Soccer", bio: "Youth trainer", rate: 40 },
-    { name: "Emily Davis", sportType: "Swimming", bio: "Olympic-level coach", rate: 70 },
-    { name: "Chris Brown", sportType: "Football", bio: "Tactical expert", rate: 55 },
-    { name: "Sarah Wilson", sportType: "Golf", bio: "Precision coach", rate: 65 },
-    { name: "Mike Anderson", sportType: "Boxing", bio: "Strength coach", rate: 45 },
-    { name: "Laura Martinez", sportType: "Volleyball", bio: "Team strategy coach", rate: 50 },
-    { name: "David White", sportType: "Track & Field", bio: "Speed coach", rate: 55 }
-  ];
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <main className="mt-6">
@@ -53,9 +66,8 @@ export default function CoachListing() {
         
         <h3 className="text-xl font-bold mt-6">Coaches Found:</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
-        {coaches.map((coach, index) => (
-            <CoachCard key={index} {...coach} />
-          ))}
+            <CoachCard userID={1} />
+            <CoachCard userID={2} />
         </div>
       </main>
     </div>
