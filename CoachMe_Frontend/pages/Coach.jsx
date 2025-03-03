@@ -48,12 +48,13 @@ export default function CoachListing() {
     <div className="p-6 bg-gray-100 min-h-screen">
       <main className="mt-6">
         <h2 className="text-2xl font-bold text-center">Best Coaches in Current Geographic Position</h2>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 gap-4">
           <input
             type="text"
             placeholder="Search"
             className="border p-2 rounded w-1/2"
           />
+          <button className="px-4 py-2 bg-gray-300 rounded">Search</button>
         </div>
 
         {/* Button collection at the top, become drop downs later? */}
@@ -61,9 +62,8 @@ export default function CoachListing() {
           <button className="px-4 py-2 bg-gray-300 rounded">Type of Sport</button>
           <button className="px-4 py-2 bg-gray-300 rounded">Specialty</button>
           <button className="px-4 py-2 bg-gray-300 rounded">Location</button>
-          <button className="px-4 py-2 bg-gray-300 rounded">Rate min</button>
-          <button className="px-4 py-2 bg-gray-300 rounded">Rate max</button>
-          <button className="px-4 py-2 bg-black text-blue rounded">Search</button>
+          <button className="px-4 py-2 bg-gray-300 rounded">Rate Min</button>
+          <button className="px-4 py-2 bg-gray-300 rounded">Rate Max</button>
         </div>
         
         <h3 className="text-xl font-bold mt-6">Coaches Found:</h3>
