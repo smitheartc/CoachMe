@@ -9,7 +9,7 @@ import {QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query'
 
 
 //pages
-import CoachListing from "../pages/Coach.jsx"
+import CoachListing from "../pages/SearchPage.jsx"
 import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile.jsx';
 import CoachDash from '../pages/CoachDash.jsx';
