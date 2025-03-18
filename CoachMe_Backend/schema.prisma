@@ -1,6 +1,6 @@
 datasource db {
   provider = "sqlite"
-  url      = "file:database.db"
+  url      = "file:database/database.db"
 }
 
 generator db {
@@ -13,7 +13,13 @@ model Client {
   createdAt DateTime @default(now())
   email     String   @unique
   name      String?
-  location  Float[]
+  age       Int
+  location1 Float
+  location2 Float
+  sport     String
+  skill     Int
+  position  String?
+  bookings  Booking[]
 }
 
 model Coach {
@@ -21,7 +27,22 @@ model Coach {
   createdAt DateTime @default(now())
   email     String   @unique
   name      String?
-  location  Float[]
+  location1 Float
+  location2 Float
   blurb     String
+  sport     String
+  speciality String
+  rate      Float
+  bookings  Booking[]
+  image     Bytes?
+}
+
+model Booking {
+  clientId Int
+  coachId Int
+  Client   Client @relation(fields: [clientId], references: [id])
+  Coach    Coach   @relation(fields: [coachId], references: [id])
+  @@id(name: "bookingID", [clientId, coachId])
+
 }
 
