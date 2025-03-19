@@ -3,6 +3,7 @@ from flask_restful import Api
 from flask_cors import CORS #comment this on deployment
 from api.coachSearch import searchApi
 from api.getCoachData import coachApi
+from api.createBooking import bookingApi
 from prisma import Prisma, register
 
 db = Prisma()
@@ -14,5 +15,6 @@ CORS(app) #comment this on deployment
 
 api.add_resource(searchApi, '/coachFinder/search/')
 api.add_resource(coachApi, '/coachFinder/data/')
+api.add_resource(bookingApi, '/booking/create/')
 
 

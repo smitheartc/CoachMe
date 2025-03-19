@@ -9,7 +9,7 @@ class coachApi(Resource):
 
         userID = args['userID']
 
-        coach = Coach.prisma().find_unique(where={'id' : userID})
+        coach = Coach.prisma().find_unique(where={'id' : userID}) # replace later with stuff
         returnDict = coach.dict()
         del returnDict["createdAt"]
         del returnDict["bookings"]
