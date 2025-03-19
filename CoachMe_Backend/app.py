@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS #comment this on deployment
 from api.coachSearch import searchApi
-from api.coachData import coachApi
+from api.getCoachData import coachApi
 from prisma import Prisma, register
 
 db = Prisma()

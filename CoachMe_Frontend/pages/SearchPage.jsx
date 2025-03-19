@@ -9,8 +9,8 @@ function CoachCard({userID}) { //individual coach cards on the coach listing pag
   const { isPending, isError, data, error } = useQuery({ //get coach data from backend
     queryKey: ['key', userID],
     queryFn: async () => {
-      console.log(userID);
       const data = await axios.post("http://127.0.0.1:5000/coachFinder/data/", {userID}); //replace URL later
+      console.log(data.data);
       return data
     },
   })
@@ -30,11 +30,10 @@ function CoachCard({userID}) { //individual coach cards on the coach listing pag
   return (
   <div className="border p-4 bg-white rounded shadow-md">
   <div className="h-24 bg-gray-300 flex items-center justify-center">
-    Profile Photo
-  </div>
+  <img src={"data:image/jpg;base64," + data.data.image} ></img></div>
   <h4 className="font-bold mt-2">{data.data.name}</h4>
-  <p>{data.data.sportType}</p>
-  <p>{data.data.bio}</p>
+  <p>{data.data.sport}</p>
+  <p>{data.data.blurb}</p>
   <p>Rate: ${data.data.rate}/hr</p>
   <Link className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" to='/coachview' state={data.data}>
     View Details

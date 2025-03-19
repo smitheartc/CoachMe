@@ -1,4 +1,4 @@
 /CoachMe_Backend/.venv
 /CoachMe_Backend/__pycache__
 /CoachMe_Backend/api/__pycache__
-/CoachMe_Backend/database/database.db
+# /CoachMe_Backend/database/database.db

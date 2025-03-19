@@ -1,5 +1,4 @@
 from flask_restful import Api, Resource, reqparse
-import json
 from prisma.models import Coach
 
 class coachApi(Resource):
