@@ -14,8 +14,7 @@ import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile.jsx';
 import CoachDash from '../pages/CoachDash.jsx';
 import ClientCoachView from '../pages/ClientCoachView'
-
-
+import CoachSignup from '../pages/CoachSignup.jsx'
 
 function Main() {
   return (
@@ -26,10 +25,10 @@ function Main() {
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/coachdash' element={<CoachDash/>}></Route>
       <Route path='/coachview' element={<ClientCoachView/>}></Route>
+      <Route path='/CoachSignup' element={<CoachSignup/>}></Route>
     </Routes>
   );
 }
-
 
 function App() {
   const queryClient = new QueryClient()
