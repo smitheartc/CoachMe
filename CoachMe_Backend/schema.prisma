@@ -1,49 +1,57 @@
+// Data source: SQLite
 datasource db {
   provider = "sqlite"
   url      = "file:database/database.db"
 }
 
-generator db {
+// Generator: Python Prisma Client
+generator client {
   provider  = "prisma-client-py"
-  interface = "sync"
+  interface = "sync" // or "async" if you're using asyncio
 }
 
+// ========== MODELS ==========
+
+// Client Model
 model Client {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  name      String?
-  age       Int
-  location1 Float
-  location2 Float
-  sport     String
-  skill     Int
-  position  String?
-  bookings  Booking[]
+  id         Int       @id @default(autoincrement())
+  createdAt  DateTime  @default(now())
+  email      String    @unique
+  name       String?   // Optional
+  age        Int
+  location1  Float
+  location2  Float
+  sport      String
+  skill      Int
+  position   String?   // Optional
+  bookings   Booking[]
 }
 
+// Coach Model
 model Coach {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  name      String?
-  location1 Float
-  location2 Float
-  blurb     String
-  sport     String
+  id         Int       @id @default(autoincrement())
+  createdAt  DateTime  @default(now())
+  email      String    @unique
+  name       String?   // Optional
+  location1  Float
+  location2  Float
+  blurb      String
+  sport      String
   speciality String
-  rate      Float
-  bookings  Booking[]
-  image     Bytes?
+  rate       Float
+  bookings   Booking[]
+  image      Bytes?    // Optional
 }
 
+// Booking Model
 model Booking {
-  clientId Int
-  coachId  Int
-  createdAt   DateTime @default(now())
-  bookingTime DateTime
-  Client   Client @relation(fields: [clientId], references: [id])
-  Coach    Coach   @relation(fields: [coachId], references: [id])
-  @@id(name: "bookingID", [clientId, coachId, bookingTime])
-}
+  clientId     Int
+  coachId      Int
+  bookingTime  DateTime
+  createdAt    DateTime  @default(now())
 
+  Client       Client    @relation(fields: [clientId], references: [id])
+  Coach        Coach     @relation(fields: [coachId], references: [id])
+
+  @@id([clientId, coachId, bookingTime]) // Composite primary key
+}
