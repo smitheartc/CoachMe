@@ -39,7 +39,8 @@ const CoachSignup = () => {
   });
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
       <h1 className="text-2xl font-bold mb-6 text-center">Coach Signup</h1>
       <p className="text-gray-600 mb-6 text-center">Step 3 of 3: Coach Questions</p>
       
@@ -196,6 +197,7 @@ const CoachSignup = () => {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };
