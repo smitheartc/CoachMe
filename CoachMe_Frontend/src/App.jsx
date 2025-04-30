@@ -14,19 +14,26 @@ import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile.jsx';
 import CoachDash from '../pages/CoachDash.jsx';
 import ClientCoachView from '../pages/ClientCoachView'
+import CoachSignup from '../pages/CoachSignup.jsx';
+import SignUp from '../pages/SignUp.jsx';
+import SignUp2 from '../pages/SignUp2.jsx';
+import AtheleteSignUp from '../pages/AtheleteSignUp.jsx';
 
 
 
 function Main() {
   return (
-    <Routes>
-      <Route path='/' element={<CoachListing/>}></Route>
-      <Route path='/coachfinder' element={<CoachListing/>}></Route>
-      <Route path='/dashboard' element={<Dashboard/>}></Route>
-      <Route path='/profile' element={<Profile/>}></Route>
-      <Route path='/coachdash' element={<CoachDash/>}></Route>
-      <Route path='/coachview' element={<ClientCoachView/>}></Route>
-    </Routes>
+    // <Routes>
+    //   <Route path='/' element={<CoachListing/>}></Route>
+    //   <Route path='/coachfinder' element={<CoachListing/>}></Route>
+    //   <Route path='/dashboard' element={<Dashboard/>}></Route>
+    //   <Route path='/profile' element={<Profile/>}></Route>
+    //   <Route path='/coachdash' element={<CoachDash/>}></Route>
+    //   <Route path='/coachview' element={<ClientCoachView/>}></Route>
+    // </Routes>
+    // <SignUp />
+    //<SignUp2 />
+    <AtheleteSignUp />
   ); 
 }
 
