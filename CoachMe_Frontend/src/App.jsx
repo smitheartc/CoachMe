@@ -23,17 +23,17 @@ import AtheleteSignUp from '../pages/AtheleteSignUp.jsx';
 
 function Main() {
   return (
-    // <Routes>
-    //   <Route path='/' element={<CoachListing/>}></Route>
-    //   <Route path='/coachfinder' element={<CoachListing/>}></Route>
-    //   <Route path='/dashboard' element={<Dashboard/>}></Route>
-    //   <Route path='/profile' element={<Profile/>}></Route>
-    //   <Route path='/coachdash' element={<CoachDash/>}></Route>
-    //   <Route path='/coachview' element={<ClientCoachView/>}></Route>
-    // </Routes>
-    // <SignUp />
-    //<SignUp2 />
-    <AtheleteSignUp />
+    <Routes>
+      <Route path='/' element={<CoachListing/>}></Route>
+      <Route path='/coachfinder' element={<CoachListing/>}></Route>
+      <Route path='/dashboard' element={<Dashboard/>}></Route>
+      <Route path='/profile' element={<Profile/>}></Route>
+      <Route path='/coachdash' element={<CoachDash/>}></Route>
+      <Route path='/coachview' element={<ClientCoachView/>}></Route>
+      <Route path='/signup' element={<SignUp/>}></Route>
+      <Route path='/signup2' element ={<SignUp2/>}></Route>
+      <Route path='/atheletesignup' element={<AtheleteSignUp/>}></Route>
+    </Routes>
   ); 
 }
 
