@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBackground from '../src/assets/heroBackground.png'; // Must exist
+import heroBackground from '../src/assets/heroBackground.png'; // Ensure this exists
 
 const Home = () => {
   return (
@@ -36,10 +36,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* True Full-Width About Section */}
+      {/* About Section */}
       <div className="relative z-10 -mt-20 w-full">
         <div className="w-full bg-[#FFDB8C] rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between">
-          {/* Image Column */}
           <div className="w-full md:w-1/2">
             <img
               src="https://via.placeholder.com/600x350.png?text=Coach+Me+Image"
@@ -48,7 +47,6 @@ const Home = () => {
             />
           </div>
 
-          {/* Text Column */}
           <div className="w-full md:w-1/2 p-6 md:p-12 text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
               About Coach Me
@@ -61,6 +59,88 @@ const Home = () => {
             <button className="bg-gray-800 text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition">
               Find More About Us
             </button>
+          </div>
+        </div>
+      </div>
+
+      {/* What You Get Section */}
+      <div className="w-full bg-white py-16 px-6 md:px-12 text-center">
+        <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
+          What You Get
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-10">
+          How We Support
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">1-on-1 Coaching</h3>
+            <p className="text-sm text-gray-600">Get matched with a coach for personalized training to elevate your skills.</p>
+          </div>
+          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">Tryout Listings</h3>
+            <p className="text-sm text-gray-600">Never miss an opportunity. Explore verified tryouts near you.</p>
+          </div>
+          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">Progress with Purpose</h3>
+            <p className="text-sm text-gray-600">Track your progress and build a roadmap toward your athletic goals.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works Section */}
+      <div className="w-full bg-white py-20 px-4 md:px-12">
+        <div className="flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-12">
+          {/* Left: Placeholder Image */}
+          <div className="w-full md:w-1/2">
+            <div className="bg-gray-300 w-full h-64 md:h-[400px] rounded-xl flex items-center justify-center text-gray-600 text-xl">
+              Placeholder Image
+            </div>
+          </div>
+
+          {/* Right: Steps */}
+          <div className="w-full md:w-1/2">
+            <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
+              How it works
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+              Get our coaching service
+            </h2>
+
+            <div className="space-y-6">
+              {/* Step 1 */}
+              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
+                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                  1
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Sign Up</h3>
+                  <p className="text-sm text-gray-700">Create your athlete or coach profile in minutes.</p>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
+                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                  2
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Find Your Perfect Match</h3>
+                  <p className="text-sm text-gray-700">Explore listings or get matched with the right coach or team.</p>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
+                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                  3
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Train, Improve, Succeed</h3>
+                  <p className="text-sm text-gray-700">Start your journey with purpose and measurable progress.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
