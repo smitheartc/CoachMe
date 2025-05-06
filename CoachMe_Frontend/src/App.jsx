@@ -1,52 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import React from 'react';
-import {BrowserRouter, Router, Routes, Route} from "react-router-dom";
-import Navbar from "./Navbar.jsx"
-import {QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query'
+import React from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Navbar from './Navbar'
 
+// pages
+import Home from '../pages/Home.jsx'
+import CoachListing from '../pages/SearchPage.jsx'
+import Dashboard from '../pages/Dashboard.jsx'
+import Profile from '../pages/Profile.jsx'
+import CoachDash from '../pages/CoachDash.jsx'
+import ClientCoachView from '../pages/ClientCoachView.jsx'
+import CoachSignup from '../pages/CoachSignup.jsx'
+import SignUp from '../pages/SignUp.jsx'
+import SignUp2 from '../pages/SignUp2.jsx'
+import AtheleteSignUp from '../pages/AtheleteSignUp.jsx'
 
-//pages
-import CoachListing from "../pages/SearchPage.jsx"
-import Dashboard from '../pages/Dashboard.jsx';
-import Profile from '../pages/Profile.jsx';
-import CoachDash from '../pages/CoachDash.jsx';
-import ClientCoachView from '../pages/ClientCoachView'
-import CoachSignup from '../pages/CoachSignup.jsx';
-import SignUp from '../pages/SignUp.jsx';
-import SignUp2 from '../pages/SignUp2.jsx';
-import AtheleteSignUp from '../pages/AtheleteSignUp.jsx';
-
-
-
-function Main() {
-  return (
-    <Routes>
-      <Route path='/' element={<CoachListing/>}></Route>
-      <Route path='/coachfinder' element={<CoachListing/>}></Route>
-      <Route path='/dashboard' element={<Dashboard/>}></Route>
-      <Route path='/profile' element={<Profile/>}></Route>
-      <Route path='/coachdash' element={<CoachDash/>}></Route>
-      <Route path='/coachview' element={<ClientCoachView/>}></Route>
-      <Route path='/signup' element={<SignUp/>}></Route>
-      <Route path='/signup2' element ={<SignUp2/>}></Route>
-      <Route path='/atheletesignup' element={<AtheleteSignUp/>}></Route>
-    </Routes>
-  ); 
-}
-
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const queryClient = new QueryClient()
+
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <Navbar />
-      <Main />
-      </QueryClientProvider>
-    </>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/coachfinder' element={<CoachListing />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/coachdash' element={<CoachDash />} />
+        <Route path='/coachview' element={<ClientCoachView />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signup2' element={<SignUp2 />} />
+        <Route path='/atheletesignup' element={<AtheleteSignUp />} />
+      </Routes>
+    </QueryClientProvider>
   )
 }
 
