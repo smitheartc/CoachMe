@@ -63,8 +63,6 @@ const Home = () => {
   </div>
 </div>
 
-
-
       {/* What You Get Section */}
       <div className="w-full bg-white py-16 px-6 md:px-12 text-center">
         <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
