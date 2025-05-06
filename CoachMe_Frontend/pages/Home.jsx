@@ -36,32 +36,34 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About Section */}
-      <div className="relative z-10 -mt-20 w-full">
-        <div className="w-full bg-[#FFDB8C] rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full md:w-1/2">
-            <img
-              src="https://via.placeholder.com/600x350.png?text=Coach+Me+Image"
-              alt="Coach Me"
-              className="w-full h-auto rounded-l-2xl md:rounded-r-none"
-            />
-          </div>
-
-          <div className="w-full md:w-1/2 p-6 md:p-12 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              About Coach Me
-            </h2>
-            <p className="text-md md:text-lg text-gray-800 mb-6">
-              Coach Me is your personalized platform for connecting athletes with expert coaches and top-tier teams.
-              Whether you're looking to grow your skills or take your game to the next level, we provide the tools and
-              community to help you succeed.
-            </p>
-            <button className="bg-gray-800 text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition">
-              Find More About Us
-            </button>
-          </div>
-        </div>
+{/* About Section */}
+<div className="relative z-10 -mt-20 w-full">
+  <div className="w-full bg-[#FFDB8C] rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between p-6 md:p-12">
+    {/* Placeholder Box */}
+    <div className="w-full md:w-1/2 flex items-center justify-center mb-6 md:mb-0">
+      <div className="w-72 h-44 bg-gray-300 rounded-xl flex items-center justify-center text-gray-600 text-lg">
+        Coach Me Placeholder
       </div>
+    </div>
+
+    {/* Text Content */}
+    <div className="w-full md:w-1/2 text-center md:text-left">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        About Coach Me
+      </h2>
+      <p className="text-md md:text-lg text-gray-800 mb-6">
+        Coach Me is your personalized platform for connecting athletes with expert coaches and top-tier teams.
+        Whether you're looking to grow your skills or take your game to the next level, we provide the tools and
+        community to help you succeed.
+      </p>
+      <button className="bg-gray-800 text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition">
+        Find More About Us
+      </button>
+    </div>
+  </div>
+</div>
+
+
 
       {/* What You Get Section */}
       <div className="w-full bg-white py-16 px-6 md:px-12 text-center">
@@ -144,7 +146,58 @@ const Home = () => {
           </div>
         </div>
       </div>
+            {/* Coaches & Clubs CTA Section */}
+            <div className="w-full bg-white py-20 px-4 md:px-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          For Coaches and Clubs
+        </h2>
+        <p className="text-md text-gray-700 mb-8">
+          Share your expertise or grow your team — help shape the future of the game.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-md font-medium shadow-md hover:scale-105 transition">
+            Apply to be a Coach
+          </button>
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-md font-medium shadow-md hover:scale-105 transition">
+            Post Your Team Tryouts
+          </button>
+        </div>
+      </div>
+           {/* Founder Section */}
+           <div className="w-full bg-white py-20 px-4 md:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12">
+          {/* Left Text Block */}
+          <div className="w-full md:w-1/2">
+            <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
+              Meet the Founder
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              Why Coach Me?
+            </h2>
+            <p className="text-md text-gray-700 mb-6">
+              With 15+ years as an athlete, I experienced firsthand the struggle of constantly searching for the right coaches and teams.
+              If I had found the right coaches and teammates sooner, I could have accelerated my growth and avoided wasted time.
+              That’s why I created CoachMe—to give young athletes an easier way to connect with the right coaches and teams from the start,
+              so they can train smarter, improve faster, and reach their full potential.
+            </p>
+            <p className="text-md font-bold text-black">– Alex Vo</p>
+          </div>
+
+          {/* Right Placeholder Box */}
+          <div className="w-full md:w-1/2 relative">
+            <div className="w-full h-72 bg-gray-300 rounded-xl shadow-md flex items-center justify-center text-gray-600 text-xl">
+              Founder Placeholder
+            </div>
+            <div className="absolute bottom-[-20px] right-[-20px] w-24 h-24 bg-gray-400 rounded-full flex items-center justify-center text-sm text-white shadow-lg">
+              Logo
+            </div>
+          </div>
+        </div>
+      </div>
+
     </>
+    
   );
 };
 
