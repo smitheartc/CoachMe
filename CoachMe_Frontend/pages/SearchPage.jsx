@@ -17,7 +17,7 @@ function CoachCard({ userID }) {
 
   if (isPending) {
     return (
-      <div className="border p-4 bg-white rounded shadow-md text-black">
+      <div className="border p-4 bg-orange-300 rounded shadow-md text-black font-bold">
         <span>Loading...</span>
       </div>
     );
@@ -28,14 +28,14 @@ function CoachCard({ userID }) {
   }
 
   return (
-    <div className="border p-4 bg-white rounded shadow-md text-black">
+    <div className="border p-4 bg-orange-300 rounded shadow-md text-black font-bold">
       <div className="h-24 bg-gray-300 flex items-center justify-center">
         <img
           src={"data:image/jpg;base64," + data.data.image}
           alt="Coach"
         />
       </div>
-      <h4 className="font-bold mt-2">{data.data.name}</h4>
+      <h4 className="mt-2">{data.data.name}</h4>
       <p>{data.data.sport}</p>
       <p>{data.data.blurb}</p>
       <p>Rate: ${data.data.rate}/hr</p>
