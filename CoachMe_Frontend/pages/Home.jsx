@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBackground from '../src/assets/heroBackground.png'; // Ensure this exists
+import heroBackground from '../src/assets/heroBackground.png'; 
 
 const Home = () => {
   return (
@@ -27,10 +27,10 @@ const Home = () => {
         </div>
 
         <div className="flex gap-4">
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-[50px] text-lg font-medium shadow-md hover:scale-105 transition">
             COACH
           </button>
-          <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-white text-black px-6 py-3 rounded-[50px] text-lg font-medium shadow-md hover:scale-105 transition">
             TEAM
           </button>
         </div>
@@ -38,12 +38,14 @@ const Home = () => {
 
 {/* About Section */}
 <div className="relative z-10 -mt-20 w-full">
-  <div className="w-full bg-[#FFDB8C] rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between p-6 md:p-12">
-    {/* Placeholder Box */}
+  <div className="w-full h-[557px] bg-[#FFDB8C] rounded-[50px] shadow-md flex flex-col md:flex-row items-center justify-between p-6 md:p-12">
+    {/* Image Box */}
     <div className="w-full md:w-1/2 flex items-center justify-center mb-6 md:mb-0">
-      <div className="w-72 h-44 bg-gray-300 rounded-xl flex items-center justify-center text-gray-600 text-lg">
-        Coach Me Placeholder
-      </div>
+      <img 
+        src="/src/assets/AboutCoachMe.png" 
+        alt="About Coach Me" 
+        className="w-[541px] h-[367px] object-cover rounded-[50px]"
+      />
     </div>
 
     {/* Text Content */}
@@ -56,7 +58,7 @@ const Home = () => {
         Whether you're looking to grow your skills or take your game to the next level, we provide the tools and
         community to help you succeed.
       </p>
-      <button className="bg-gray-800 text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition">
+      <button className="bg-gray-800 text-white px-6 py-3 rounded-[50px] text-sm font-medium hover:opacity-90 transition">
         Find More About Us
       </button>
     </div>
@@ -72,18 +74,39 @@ const Home = () => {
           How We Support
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">1-on-1 Coaching</h3>
-            <p className="text-sm text-gray-600">Get matched with a coach for personalized training to elevate your skills.</p>
+        <div className="flex justify-center gap-6">
+          <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <img 
+              src="/src/assets/1-on-1.jpg" 
+              alt="1-on-1 Coaching" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C]">1-on-1 Coaching</h3>
+              <p className="text-sm text-white">Get matched with a coach for personalized training to elevate your skills.</p>
+            </div>
           </div>
-          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Tryout Listings</h3>
-            <p className="text-sm text-gray-600">Never miss an opportunity. Explore verified tryouts near you.</p>
+          <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <img 
+              src="/src/assets/TryoutListings.jpg" 
+              alt="Tryout Listings" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C]">Tryout Listings</h3>
+              <p className="text-sm text-white">Never miss an opportunity. Explore verified tryouts near you.</p>
+            </div>
           </div>
-          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Progress with Purpose</h3>
-            <p className="text-sm text-gray-600">Track your progress and build a roadmap toward your athletic goals.</p>
+          <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <img 
+              src="/src/assets/ProgressWithPurpose.jpg" 
+              alt="Progress with Purpose" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C]">Progress with Purpose</h3>
+              <p className="text-sm text-white">Track your progress and build a roadmap toward your athletic goals.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -91,13 +114,17 @@ const Home = () => {
       {/* How It Works Section */}
       <div className="w-full bg-white py-20 px-4 md:px-12">
         <div className="flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-12">
-          {/* Left: Placeholder Image */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-gray-300 w-full h-64 md:h-[400px] rounded-xl flex items-center justify-center text-gray-600 text-xl">
-              Placeholder Image
+          {/* Left: Image */}
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <div className="w-[537px] h-[500px] overflow-hidden">
+              <img 
+                src="/src/assets/CoachingService.png" 
+                alt="Coaching Service" 
+                className="w-full h-full object-contain"
+                style={{ borderRadius: '50px' }}
+              />
             </div>
           </div>
-
           {/* Right: Steps */}
           <div className="w-full md:w-1/2">
             <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
@@ -109,8 +136,8 @@ const Home = () => {
 
             <div className="space-y-6">
               {/* Step 1 */}
-              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+              <div className="bg-[#C4C4C4] rounded-[50px] p-4 flex items-start gap-4 shadow">
+                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg">
                   1
                 </div>
                 <div>
@@ -120,8 +147,8 @@ const Home = () => {
               </div>
 
               {/* Step 2 */}
-              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+              <div className="bg-[#C4C4C4] rounded-[50px] p-4 flex items-start gap-4 shadow">
+                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg">
                   2
                 </div>
                 <div>
@@ -131,8 +158,8 @@ const Home = () => {
               </div>
 
               {/* Step 3 */}
-              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+              <div className="bg-[#C4C4C4] rounded-[50px] p-4 flex items-start gap-4 shadow">
+                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg">
                   3
                 </div>
                 <div>
@@ -149,15 +176,15 @@ const Home = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           For Coaches and Clubs
         </h2>
-        <p className="text-md text-gray-700 mb-8">
-          Share your expertise or grow your team — help shape the future of the game.
+        <p className="text-[24px] font-normal mb-8 text-black">
+          Want to grow your client base or fill your team with passionate players?
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-md font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-[50px] text-md font-medium shadow-md hover:scale-105 transition">
             Apply to be a Coach
           </button>
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-md font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-[50px] text-md font-medium shadow-md hover:scale-105 transition">
             Post Your Team Tryouts
           </button>
         </div>
@@ -174,22 +201,27 @@ const Home = () => {
               Why Coach Me?
             </h2>
             <p className="text-md text-gray-700 mb-6">
-              With 15+ years as an athlete, I experienced firsthand the struggle of constantly searching for the right coaches and teams.
+              "With 15+ years as an athlete, I experienced firsthand the struggle of constantly searching for the right coaches and teams.
               If I had found the right coaches and teammates sooner, I could have accelerated my growth and avoided wasted time.
-              That’s why I created CoachMe—to give young athletes an easier way to connect with the right coaches and teams from the start,
-              so they can train smarter, improve faster, and reach their full potential.
+              That's why I created CoachMe—to give young athletes an easier way to connect with the right coaches and teams from the start,
+              so they can train smarter, improve faster, and reach their full potential."
             </p>
             <p className="text-md font-bold text-black">– Alex Vo</p>
           </div>
 
-          {/* Right Placeholder Box */}
+          {/* Right Image Block */}
           <div className="w-full md:w-1/2 relative">
-            <div className="w-full h-72 bg-gray-300 rounded-xl shadow-md flex items-center justify-center text-gray-600 text-xl">
-              Founder Placeholder
-            </div>
-            <div className="absolute bottom-[-20px] right-[-20px] w-24 h-24 bg-gray-400 rounded-full flex items-center justify-center text-sm text-white shadow-lg">
-              Logo
-            </div>
+            <img 
+              src="/src/assets/AlexVo1.jpg" 
+              alt="Alex Vo" 
+              className="w-[477px] h-[488px] object-cover rounded-[50px]"
+              style={{ objectPosition: '70% 50%' }}
+            />
+            <img 
+              src="/src/assets/AlexVo2.jpg" 
+              alt="Alex Vo Logo" 
+              className="absolute bottom-[-60px] right-[-20px] w-[270px] h-[270px] object-cover rounded-[50px]"
+            />
           </div>
         </div>
       </div>
