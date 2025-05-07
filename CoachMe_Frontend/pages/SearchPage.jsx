@@ -54,16 +54,22 @@ export default function CoachListing() {
   return (
     <div className="p-6 bg-gray-100 min-h-screen text-black">
       <main className="mt-6">
-        <h2 className="text-2xl font-bold text-center">Best Coaches in Current Geographic Position</h2>
-        <div className="flex justify-center mt-4 gap-4">
-          <input
-            type="text"
-            placeholder="Search"
-            className="border p-2 rounded w-1/2 text-black"
-          />
-          <button className="px-4 py-2 bg-gray-300 rounded text-black font-bold">
-            Search
-          </button>
+        <h2 className="text-2xl font-bold text-center">
+          Best Coaches in Current Geographic Position
+        </h2>
+
+        {/* Updated Search Bar */}
+        <div className="flex justify-center mt-4">
+          <div className="relative w-1/2">
+            <input
+              type="text"
+              placeholder="Search"
+              className="border p-2 pr-20 rounded-full w-full text-black"
+            />
+            <button className="absolute right-1 top-1/2 -translate-y-1/2 bg-blue-500 text-white font-bold px-4 py-2 rounded-full focus:outline-none">
+              Search
+            </button>
+          </div>
         </div>
 
         <div className="flex justify-center space-x-2 mt-4">
