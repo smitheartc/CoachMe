@@ -12,13 +12,13 @@ const Home = () => {
           backgroundColor: '#000',
         }}
       >
-        <h1 className="text-2xl md:text-3xl font-normal text-white mb-4">
+        <h1 className="text-[34px] font-semibold text-white mb-4" style={{ lineHeight: '100%' }}>
           COACHING FOR DREAMERS
         </h1>
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
+        <h2 className="text-[58px] font-bold text-white mb-2" style={{ lineHeight: '100%' }}>
           Where Athletes Meets Their Match
         </h2>
-        <p className="text-lg md:text-2xl font-normal text-white max-w-xl mb-10">
+        <p className="text-[24px] font-semibold text-white mb-10 whitespace-nowrap" style={{ lineHeight: '100%' }}>
           Find the perfect coach, Join the right team, Take your game to the next level.
         </p>
 
@@ -27,10 +27,10 @@ const Home = () => {
         </div>
 
         <div className="flex gap-4">
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-[50px] text-lg font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition">
             COACH
           </button>
-          <button className="bg-white text-black px-6 py-3 rounded-[50px] text-lg font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition">
             TEAM
           </button>
         </div>
@@ -54,12 +54,11 @@ const Home = () => {
         About Coach Me
       </h2>
       <p className="text-md md:text-lg text-gray-800 mb-6">
-        Coach Me is your personalized platform for connecting athletes with expert coaches and top-tier teams.
-        Whether you're looking to grow your skills or take your game to the next level, we provide the tools and
-        community to help you succeed.
+        CoachMe is the all-in-one platform connecting young athletes with top coaches and teams. 
+        No more searching multiple sites—CoachMe makes it easy to find the right fit for training and competition.
       </p>
-      <button className="bg-gray-800 text-white px-6 py-3 rounded-[50px] text-sm font-medium hover:opacity-90 transition">
-        Find More About Us
+      <button className="bg-[#8897AD] text-white px-6 py-3 rounded-[50px] text-sm font-medium hover:opacity-90 transition">
+        FIND MORE ABOUT US
       </button>
     </div>
   </div>
@@ -74,6 +73,7 @@ const Home = () => {
           How We Support
         </h2>
 
+        {/* Support Boxes */}
         <div className="flex justify-center gap-6">
           <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
             <img 
@@ -81,9 +81,9 @@ const Home = () => {
               alt="1-on-1 Coaching" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C]">1-on-1 Coaching</h3>
-              <p className="text-sm text-white">Get matched with a coach for personalized training to elevate your skills.</p>
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">1-ON-1 COACHING</h3>
+              <p className="text-sm text-white w-full text-left">Booking made simple</p>
             </div>
           </div>
           <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
@@ -92,9 +92,9 @@ const Home = () => {
               alt="Tryout Listings" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C]">Tryout Listings</h3>
-              <p className="text-sm text-white">Never miss an opportunity. Explore verified tryouts near you.</p>
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">TRYOUT LISTINGS</h3>
+              <p className="text-sm text-white w-full text-left">Discover tryouts and teams that match your level</p>
             </div>
           </div>
           <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
@@ -103,9 +103,9 @@ const Home = () => {
               alt="Progress with Purpose" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C]">Progress with Purpose</h3>
-              <p className="text-sm text-white">Track your progress and build a roadmap toward your athletic goals.</p>
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">PROGRESS WITH PURPOSE</h3>
+              <p className="text-sm text-white w-full text-left">Get personalized coach notes after each session to focus your training at home</p>
             </div>
           </div>
         </div>
@@ -115,15 +115,12 @@ const Home = () => {
       <div className="w-full bg-white py-20 px-4 md:px-12">
         <div className="flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-12">
           {/* Left: Image */}
-          <div className="w-full md:w-1/2 flex justify-center items-center">
-            <div className="w-[537px] h-[500px] overflow-hidden">
-              <img 
-                src="/src/assets/CoachingService.png" 
-                alt="Coaching Service" 
-                className="w-full h-full object-contain"
-                style={{ borderRadius: '50px' }}
-              />
-            </div>
+          <div className="w-full md:w-1/2">
+            <img 
+              src="/src/assets/CoachingService.png" 
+              alt="Coaching Service" 
+              className="w-[537px] h-[500px] object-cover rounded-[50px]"
+            />
           </div>
           {/* Right: Steps */}
           <div className="w-full md:w-1/2">
@@ -131,40 +128,40 @@ const Home = () => {
               How it works
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-              Get our coaching service
+              Get Our Coaching Service
             </h2>
 
             <div className="space-y-6">
               {/* Step 1 */}
-              <div className="bg-[#C4C4C4] rounded-[50px] p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg">
+              <div className="bg-[#F5F5F5] border border-[#C4C4C4] p-4 flex items-center gap-4 relative">
+                <div className="bg-[#FFDB8C] text-white font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg absolute -left-5">
                   1
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Sign Up</h3>
-                  <p className="text-sm text-gray-700">Create your athlete or coach profile in minutes.</p>
+                <div className="ml-8">
+                  <h3 className="text-lg font-semibold text-black">Sign Up</h3>
+                  <p className="text-sm text-black">Create an account to have access to the best coaches and teams near you.</p>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="bg-[#C4C4C4] rounded-[50px] p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg">
+              <div className="bg-[#F5F5F5] border border-[#C4C4C4] p-4 flex items-center gap-4 relative">
+                <div className="bg-[#FFDB8C] text-white font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg absolute -left-5">
                   2
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Find Your Perfect Match</h3>
-                  <p className="text-sm text-gray-700">Explore listings or get matched with the right coach or team.</p>
+                <div className="ml-8">
+                  <h3 className="text-lg font-semibold text-black">Find Your Perfect Match</h3>
+                  <p className="text-sm text-black">Connect and explore with the top coaches and teams.</p>
                 </div>
               </div>
 
               {/* Step 3 */}
-              <div className="bg-[#C4C4C4] rounded-[50px] p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg">
+              <div className="bg-[#F5F5F5] border border-[#C4C4C4] p-4 flex items-center gap-4 relative">
+                <div className="bg-[#FFDB8C] text-white font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg absolute -left-5">
                   3
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Train, Improve, Succeed</h3>
-                  <p className="text-sm text-gray-700">Start your journey with purpose and measurable progress.</p>
+                <div className="ml-8">
+                  <h3 className="text-lg font-semibold text-black">Train, Improve, Succeed</h3>
+                  <p className="text-sm text-black">Monitor your training progress and advance with expert guidance.</p>
                 </div>
               </div>
             </div>
@@ -190,7 +187,7 @@ const Home = () => {
         </div>
       </div>
            {/* Founder Section */}
-           <div className="w-full bg-white py-20 px-4 md:px-12">
+           <div className="w-full bg-white py-20 pb-40 px-4 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12">
           {/* Left Text Block */}
           <div className="w-full md:w-1/2">
@@ -200,28 +197,32 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Why Coach Me?
             </h2>
-            <p className="text-md text-gray-700 mb-6">
+            <p className="text-md text-gray-700 mb-0">
               "With 15+ years as an athlete, I experienced firsthand the struggle of constantly searching for the right coaches and teams.
               If I had found the right coaches and teammates sooner, I could have accelerated my growth and avoided wasted time.
               That's why I created CoachMe—to give young athletes an easier way to connect with the right coaches and teams from the start,
               so they can train smarter, improve faster, and reach their full potential."
             </p>
-            <p className="text-md font-bold text-black">– Alex Vo</p>
+            <p className="text-md font-bold text-black text-right -mt-2">– Alex Vo</p>
           </div>
 
           {/* Right Image Block */}
-          <div className="w-full md:w-1/2 relative">
-            <img 
-              src="/src/assets/AlexVo1.jpg" 
-              alt="Alex Vo" 
-              className="w-[477px] h-[488px] object-cover rounded-[50px]"
-              style={{ objectPosition: '70% 50%' }}
-            />
-            <img 
-              src="/src/assets/AlexVo2.jpg" 
-              alt="Alex Vo Logo" 
-              className="absolute bottom-[-60px] right-[-20px] w-[270px] h-[270px] object-cover rounded-[50px]"
-            />
+          <div className="w-full md:w-1/2 relative flex justify-end">
+            <div className="relative w-full max-w-[477px] flex justify-end">
+              <div className="relative w-[477px]">
+                <img 
+                  src="/src/assets/AlexVo1.jpg" 
+                  alt="Alex Vo" 
+                  className="w-full h-[488px] object-cover rounded-[50px]"
+                  style={{ objectPosition: '70% 50%' }}
+                />
+                <img 
+                  src="/src/assets/AlexVo2.jpg" 
+                  alt="Alex Vo Logo" 
+                  className="absolute bottom-[-130px] right-[-130px] w-[270px] h-[270px] object-cover rounded-[50px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
