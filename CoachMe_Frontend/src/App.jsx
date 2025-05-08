@@ -12,6 +12,7 @@ import ClientCoachView from '../pages/ClientCoachView.jsx'
 import CoachSignup from '../pages/CoachSignup.jsx'
 import SignUp from '../pages/SignUp.jsx'
 import SignUp2 from '../pages/SignUp2.jsx'
+import SignUp3 from '../pages/SignUp3.jsx'
 import AtheleteSignUp from '../pages/AtheleteSignUp.jsx'
 
 import { Routes, Route } from 'react-router-dom'
