@@ -31,6 +31,7 @@ function App() {
         <Route path='/coachview' element={<ClientCoachView />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signup2' element={<SignUp2 />} />
+        <Route path='/signup3' element={<SignUp3 />} />
         <Route path='/atheletesignup' element={<AtheleteSignUp />} />
       </Routes>
     </QueryClientProvider>
