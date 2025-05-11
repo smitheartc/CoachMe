@@ -5,9 +5,9 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center p-4 bg-yellow-400 shadow-md text-black">
       {/* Logo on the left */}
-      <div>
+      <Link to="/">
         <img src={logo} className="h-12 md:h-20 w-auto" alt="Logo" />
-      </div>
+      </Link>
 
       {/* Navigation on the right */}
       <nav className="flex items-center space-x-4 font-bold">
@@ -16,6 +16,12 @@ export default function Navbar() {
           className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
         >
           Home
+        </Link>
+        <Link
+          to="/about"
+          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
+        >
+          About
         </Link>
         <Link
           to="/coachfinder"
