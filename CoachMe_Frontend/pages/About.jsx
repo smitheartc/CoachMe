@@ -6,21 +6,18 @@ const About = () => {
     <>
       {/* Hero Section */}
       <div
-        className="w-full min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-center px-4"
+        className="w-full min-h-screen bg-cover bg-center relative px-4"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundColor: '#000',
         }}
       >
-        <h1 className="text-[34px] font-semibold text-white mb-4" style={{ lineHeight: '100%' }}>
-          ABOUT COACH ME
-        </h1>
-        <h2 className="text-[58px] font-bold text-white mb-2" style={{ lineHeight: '100%' }}>
-          Our Mission & Vision
-        </h2>
-        <p className="text-[24px] font-semibold text-white mb-10 max-w-3xl" style={{ lineHeight: '100%' }}>
-          Empowering athletes to reach their full potential through meaningful connections with coaches and teams.
-        </p>
+        <div className="absolute top-1/3 right-1/4 md:top-1/3 md:right-1/4 lg:top-1/3 lg:right-1/4">
+          <h1 className="text-[34px] md:text-[48px] font-bold text-white text-right">
+            WHERE ATHLETES<br />
+            MEET THEIR MATCH.
+          </h1>
+        </div>
       </div>
 
       {/* Our Mission Section */}
@@ -50,7 +47,7 @@ const About = () => {
             {/* Right: Image */}
             <div className="w-full md:w-1/2">
               <img 
-                src="/src/assets/AboutCoachMe.png" 
+                src="/src/assets/Mission.png" 
                 alt="About Coach Me" 
                 className="w-full h-[500px] object-cover rounded-[50px]"
               />
@@ -83,7 +80,7 @@ const About = () => {
             {/* Right: Image */}
             <div className="w-full md:w-1/2">
               <img 
-                src="/src/assets/AlexVo1.jpg" 
+                src="/src/assets/WhyWeStarted.png" 
                 alt="Founder Story" 
                 className="w-full h-[500px] object-cover rounded-[50px]"
               />

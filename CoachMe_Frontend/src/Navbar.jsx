@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <header className="flex justify-between items-center p-4 bg-yellow-400 shadow-md text-black">
+    <header className="flex justify-between items-center p-4 shadow-md text-black" style={{ background: 'linear-gradient(to bottom, #FFDB8C, #FFD14B)' }}>
       {/* Logo on the left */}
       <Link to="/">
         <img src={logo} className="h-12 md:h-20 w-auto" alt="Logo" />
