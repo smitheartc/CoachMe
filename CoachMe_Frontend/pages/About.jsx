@@ -112,6 +112,105 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          <div className="text-center mt-12 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800">
+              Friends bouncing from coach to coach, hoping to finally find one that matched their learning style. Teams disbanding — and parents scrambling to find new tryouts on short notice. And now, watching his little sister and her friends going through the same trial-and-error, it was clear: the system is broken, <span className="font-bold">so we decided to fix it.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Purpose Section */}
+      <div className="w-full bg-white py-20 px-4 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
+            Our Purpose
+          </h2>
+          <div className="space-y-12">
+            <div className="flex items-center gap-6">
+              <span className="text-[48px] font-bold text-[#FFDB8C]">1</span>
+              <p className="text-lg text-gray-800">
+                To help parents, athletes, and coaches connect in one place not just for lessons, but for real development and real opportunity.
+              </p>
+            </div>
+            <div className="flex items-center gap-6 ml-12">
+              <span className="text-[48px] font-bold text-[#FFDB8C]">2</span>
+              <p className="text-lg text-gray-800">
+                Help youth athletes meet their match — the coach that gets them, and the team that helps them thrive.
+              </p>
+            </div>
+            <div className="flex items-center gap-6 ml-24">
+              <span className="text-[48px] font-bold text-[#FFDB8C]">3</span>
+              <p className="text-lg text-gray-800">
+                Save people time, money, and frustration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* What is CoachMe Section */}
+      <div className="w-full bg-[#FFDB8C] py-20 px-4 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              What is CoachMe?
+            </h2>
+            <p className="text-lg text-gray-800">
+              CoachMe is your all-in-one sports development platform for youth athletes and parents:
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="w-[209px] h-[209px] bg-[#8897AD] rounded-lg p-6 flex items-center justify-center text-center">
+              <p className="text-white text-lg">
+                Book private coaching sessions from verified local coaches
+              </p>
+            </div>
+            <div className="w-[209px] h-[209px] bg-[#8897AD] rounded-lg p-6 flex items-center justify-center text-center">
+              <p className="text-white text-lg">
+                See real-time availability and pricing — no back-and-forth
+              </p>
+            </div>
+            <div className="w-[209px] h-[209px] bg-[#8897AD] rounded-lg p-6 flex items-center justify-center text-center">
+              <p className="text-white text-lg">
+                Receive feedback from your coach after each session
+              </p>
+            </div>
+            <div className="w-[209px] h-[209px] bg-[#8897AD] rounded-lg p-6 flex items-center justify-center text-center">
+              <p className="text-white text-lg">
+                Explore local tryouts and discover new teams that fit your level
+              </p>
+            </div>
+            <div className="w-[209px] h-[209px] bg-[#8897AD] rounded-lg p-6 flex items-center justify-center text-center">
+              <p className="text-white text-lg">
+                Track your development with feedback and session history
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Join Our Journey Section */}
+      <div className="w-full bg-white py-20 px-4 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
+            Join Our Journey
+          </h2>
+          <div className="w-[1086px] h-[212px] bg-white border border-[#8897AD] rounded-lg flex flex-col items-center justify-center p-8">
+            <div className="w-full">
+              <p className="text-lg text-gray-800 mb-4">
+                We're just getting started.
+              </p>
+              <p className="text-lg text-gray-800">
+                Subscribe to stay updated on our launch, special offers, and new cities we're rolling out to.
+              </p>
+            </div>
+            <button className="bg-[#FFDB8C] text-black font-semibold py-3 px-8 rounded-lg hover:bg-[#FFD166] transition-colors mt-8">
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
     </>
