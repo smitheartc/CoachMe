@@ -1,5 +1,6 @@
 import React from 'react';
 import heroBackground from '../src/assets/heroBackground.png'; 
+import Footer from '../src/Footer';
 
 const Home = () => {
   return (
@@ -227,8 +228,8 @@ const Home = () => {
         </div>
       </div>
 
+      <Footer />
     </>
-    
   );
 };
 

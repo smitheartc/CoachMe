@@ -1,5 +1,6 @@
 import React from 'react';
 import heroBackground from '../src/assets/heroBackground.png';
+import Footer from '../src/Footer';
 
 const About = () => {
   return (
@@ -210,6 +211,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
