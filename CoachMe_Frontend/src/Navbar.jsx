@@ -13,30 +13,30 @@ export default function Navbar() {
       <nav className="flex items-center space-x-4 font-bold">
         <Link
           to="/about"
-          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
+          className="px-4 py-2 rounded focus:outline-none"
         >
           About
         </Link>
         <Link
           to="/coachfinder"
-          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
+          className="px-4 py-2 rounded focus:outline-none"
         >
           Find a Coach
         </Link>
         <Link
           to="/dashboard"
-          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
+          className="px-4 py-2 rounded focus:outline-none"
         >
           Dashboard
         </Link>
         <Link
           to="/profile"
-          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
+          className="px-4 py-2 rounded focus:outline-none"
         >
           Profile
         </Link>
         <Link
-          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
+          className="px-4 py-2 rounded focus:outline-none"
         >
           Log Out
         </Link>

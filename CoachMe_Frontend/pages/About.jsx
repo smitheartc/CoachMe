@@ -148,7 +148,7 @@ const About = () => {
       </div>
 
       {/* What is CoachMe Section */}
-      <div className="w-full bg-[#FFDB8C] py-20 px-4 md:px-12">
+      <div className="w-full bg-[#FFDB8C] py-20 px-4 md:px-12 -mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
