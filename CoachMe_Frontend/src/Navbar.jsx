@@ -12,12 +12,6 @@ export default function Navbar() {
       {/* Navigation on the right */}
       <nav className="flex items-center space-x-4 font-bold">
         <Link
-          to="/"
-          className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
-        >
-          Home
-        </Link>
-        <Link
           to="/about"
           className="px-4 py-2 rounded hover:bg-yellow-300 focus:outline-none"
         >

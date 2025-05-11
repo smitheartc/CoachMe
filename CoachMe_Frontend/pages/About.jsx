@@ -58,6 +58,62 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* Why We Started Section */}
+      <div className="w-full bg-[#FFDB8C] py-20 px-4 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              Why We Started
+            </h2>
+            <p className="text-lg text-gray-800">
+              CoachMe was born from a personal journey — and a pattern we kept seeing in our community.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Left: Content */}
+            <div className="w-full md:w-1/2">
+              <p className="text-lg text-gray-800 mb-6">
+                Our founder played baseball starting at age 5 and went through over 16 coaching changes and team switches. 
+                Each time, it meant starting over — with new teammates, new training styles, and no clear path forward. 
+                Finding the right coach and a team that helped him grow was like rolling dice. But it wasn't just his story.
+              </p>
+            </div>
+            {/* Right: Image */}
+            <div className="w-full md:w-1/2">
+              <img 
+                src="/src/assets/AlexVo1.jpg" 
+                alt="Founder Story" 
+                className="w-full h-[500px] object-cover rounded-[50px]"
+              />
+            </div>
+          </div>
+
+          <div className="text-center mt-12 mb-8">
+            <p className="text-lg text-gray-800">
+              As he got older, he started noticing the same cycle all around him — Parents constantly posting in Facebook groups asking:
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="flex justify-end mb-4">
+              <div className="bg-white p-6 rounded-[20px] shadow-md max-w-md">
+                <p className="text-lg font-bold text-gray-800">
+                  "Does anyone know of a good coach around here?"
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-start">
+              <div className="bg-white p-6 rounded-[20px] shadow-md max-w-md">
+                <p className="text-lg font-bold text-gray-800">
+                  "Any teams still looking for players?"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
