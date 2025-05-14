@@ -13,6 +13,7 @@ import CoachSignup from '../pages/CoachSignup.jsx'
 import SignUp from '../pages/SignUp.jsx'
 import SignUp2 from '../pages/SignUp2.jsx'
 import AtheleteSignUp from '../pages/AtheleteSignUp.jsx'
+import About from '../pages/About.jsx'
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -24,6 +25,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
         <Route path='/coachfinder' element={<CoachListing />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/profile' element={<Profile />} />
