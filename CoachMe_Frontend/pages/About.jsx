@@ -31,11 +31,9 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="text-[30px] text-gray-700 mb-6">
-                CoachMe exists to <span className="font-bold">empower growth and development</span> by simplifying the journey of growth and development.
-                We make it easy to find the right coach, join the right team, and receive the right feedback — all in one place. Every athlete deserves the opportunity to train, compete, and thrive in an environment that matches their potential.
+                CoachMe exists to <span className="font-bold">empower</span> youth athletes by simplifying the journey of <span className="font-bold">growth</span> and <span className="font-bold">development</span>.
               </p>
               <p className="text-[30px] text-gray-700">
-                CoachMe exists to <span className="font-bold">empower growth and development</span> by simplifying the journey of growth and development.
                 We make it easy to find the right coach, join the right team, and receive the right feedback — all in one place. Every athlete deserves the opportunity to train, compete, and thrive in an environment that matches their potential.
               </p>
             </div>
