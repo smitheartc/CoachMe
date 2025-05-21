@@ -13,25 +13,27 @@ const Home = () => {
           backgroundColor: '#000',
         }}
       >
-        <h1 className="text-[34px] font-semibold text-white mb-4" style={{ lineHeight: '100%' }}>
-          COACHING FOR DREAMERS
-        </h1>
-        <h2 className="text-[58px] font-bold text-white mb-2" style={{ lineHeight: '100%' }}>
-          Where Athletes Meets Their Match
-        </h2>
-        <p className="text-[24px] font-semibold text-white mb-10 whitespace-nowrap" style={{ lineHeight: '100%' }}>
-          Find the perfect coach, Join the right team, Take your game to the next level.
-        </p>
+        <div className="flex flex-col items-center justify-center mb-8">
+          <h1 className="text-[34px] text-white mb-4" style={{ lineHeight: '100%', fontSize: '34px !important', fontFamily: 'SF Pro Rounded', fontWeight: 400 }}>
+            COACHING FOR DREAMERS
+          </h1>
+          <h2 className="text-[58px] font-[700] text-white mb-4" style={{ lineHeight: '100%' }}>
+            Where Athletes Meets Their Match
+          </h2>
+          <p className="text-[24px] text-white mb-4 whitespace-nowrap" style={{ lineHeight: '100%', fontFamily: 'SF Pro Rounded', fontWeight: 400 }}>
+            Find the perfect coach, Join the right team, Take your game to the next level.
+          </p>
+        </div>
 
         <div className="mt-6 text-white text-xl font-semibold mb-4">
           I want to find a...
         </div>
 
         <div className="flex gap-4">
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition w-[120px]">
             COACH
           </button>
-          <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium shadow-md hover:scale-105 transition w-[120px]">
             TEAM
           </button>
         </div>
@@ -51,14 +53,14 @@ const Home = () => {
 
           {/* Text Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-[56px] font-bold mb-4 text-gray-900">
               About Coach Me
             </h2>
-            <p className="text-md md:text-lg text-gray-800 mb-6">
+            <p className="text-[20px] text-gray-800 mb-6">
               CoachMe is the all-in-one platform connecting young athletes with top coaches and teams. 
               No more searching multiple sites—CoachMe makes it easy to find the right fit for training and competition.
             </p>
-            <button className="bg-[#8897AD] text-white px-6 py-3 rounded-[50px] text-sm font-medium hover:opacity-90 transition">
+            <button className="bg-[#8897AD] text-white px-6 py-3 rounded-[50px] text-[20px] font-medium hover:opacity-90 transition">
               FIND MORE ABOUT US
             </button>
           </div>
@@ -77,36 +79,39 @@ const Home = () => {
         {/* Support Boxes */}
         <div className="flex justify-center gap-6">
           <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
             <img 
               src="/src/assets/1-on-1.jpg" 
               alt="1-on-1 Coaching" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">1-ON-1 COACHING</h3>
-              <p className="text-sm text-white w-full text-left">Booking made simple</p>
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6 z-20">
+              <h3 className="text-[40px] font-semibold mb-2 text-[#FFDB8C] w-full text-left">1-ON-1 COACHING</h3>
+              <p className="text-[22px] text-white w-full text-left">Booking made simple</p>
             </div>
           </div>
           <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
             <img 
               src="/src/assets/TryoutListings.jpg" 
               alt="Tryout Listings" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">TRYOUT LISTINGS</h3>
-              <p className="text-sm text-white w-full text-left">Discover tryouts and teams that match your level</p>
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6 z-20">
+              <h3 className="text-[40px] font-semibold mb-2 text-[#FFDB8C] w-full text-left">TRYOUT LISTINGS</h3>
+              <p className="text-[22px] text-white w-full text-left">Discover tryouts and teams that match your level</p>
             </div>
           </div>
           <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
             <img 
               src="/src/assets/ProgressWithPurpose.jpg" 
               alt="Progress with Purpose" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">PROGRESS WITH PURPOSE</h3>
-              <p className="text-sm text-white w-full text-left">Get personalized coach notes after each session to focus your training at home</p>
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6 z-20">
+              <h3 className="text-[40px] font-semibold mb-2 text-[#FFDB8C] w-full text-left">PROGRESS WITH PURPOSE</h3>
+              <p className="text-[22px] text-white w-full text-left">Get personalized coach notes after each session to focus your training at home</p>
             </div>
           </div>
         </div>

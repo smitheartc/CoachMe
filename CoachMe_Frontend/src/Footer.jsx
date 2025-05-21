@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="w-full py-12 px-4 md:px-12" style={{ backgroundColor: '#8897AD' }}>
-      <div className="max-w-7xl mx-auto">
+    <footer className="w-full py-12" style={{ backgroundColor: '#8897AD' }}>
+      <div className="max-w-7xl mx-auto px-4 md:px-12">
         {/* Top Section - Horizontal Layout */}
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Logo and Description */}
-          <div className="md:w-1/3">
-            <img src={logo} className="h-20 md:h-24 w-auto mb-6" alt="Logo" />
+          <div className="md:w-1/3 text-left">
+            <img src={logo} className="h-20 md:h-24 w-auto mb-6 -ml-8" alt="Logo" />
             <p className="text-black text-lg">
               Find the perfect coach, Join the right team, Take your game to the next level.
             </p>
@@ -52,11 +52,6 @@ export default function Footer() {
               </button>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-400 mt-12 pt-8 text-center text-black text-sm">
-          <p>© 2024 CoachMe. All rights reserved.</p>
         </div>
       </div>
     </footer>
