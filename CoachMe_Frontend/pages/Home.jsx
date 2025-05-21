@@ -1,5 +1,6 @@
 import React from 'react';
-import heroBackground from '../src/assets/heroBackground.png'; // Ensure this exists
+import heroBackground from '../src/assets/heroBackground.png'; 
+import Footer from '../src/Footer';
 
 const Home = () => {
   return (
@@ -12,13 +13,13 @@ const Home = () => {
           backgroundColor: '#000',
         }}
       >
-        <h1 className="text-2xl md:text-3xl font-normal text-white mb-4">
+        <h1 className="text-[34px] font-semibold text-white mb-4" style={{ lineHeight: '100%' }}>
           COACHING FOR DREAMERS
         </h1>
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
+        <h2 className="text-[58px] font-bold text-white mb-2" style={{ lineHeight: '100%' }}>
           Where Athletes Meets Their Match
         </h2>
-        <p className="text-lg md:text-2xl font-normal text-white max-w-xl mb-10">
+        <p className="text-[24px] font-semibold text-white mb-10 whitespace-nowrap" style={{ lineHeight: '100%' }}>
           Find the perfect coach, Join the right team, Take your game to the next level.
         </p>
 
@@ -36,37 +37,36 @@ const Home = () => {
         </div>
       </div>
 
-{/* About Section */}
-<div className="relative z-10 -mt-20 w-full">
-  <div className="w-full bg-[#FFDB8C] rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between p-6 md:p-12">
-    {/* Placeholder Box */}
-    <div className="w-full md:w-1/2 flex items-center justify-center mb-6 md:mb-0">
-      <div className="w-72 h-44 bg-gray-300 rounded-xl flex items-center justify-center text-gray-600 text-lg">
-        Coach Me Placeholder
+      {/* About Section */}
+      <div className="relative w-full" style={{ marginTop: '-200px' }}>
+        <div className="w-full h-[557px] rounded-[50px] shadow-md flex flex-col md:flex-row items-center justify-between p-6 md:p-12" style={{ backgroundColor: 'rgba(255, 219, 140, 0.95)', backdropFilter: 'blur(8px)' }}>
+          {/* Image Box */}
+          <div className="w-full md:w-1/2 flex items-center justify-center mb-6 md:mb-0">
+            <img 
+              src="/src/assets/AboutCoachMe.png" 
+              alt="About Coach Me" 
+              className="w-[541px] h-[367px] object-cover rounded-[50px]"
+            />
+          </div>
+
+          {/* Text Content */}
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              About Coach Me
+            </h2>
+            <p className="text-md md:text-lg text-gray-800 mb-6">
+              CoachMe is the all-in-one platform connecting young athletes with top coaches and teams. 
+              No more searching multiple sites—CoachMe makes it easy to find the right fit for training and competition.
+            </p>
+            <button className="bg-[#8897AD] text-white px-6 py-3 rounded-[50px] text-sm font-medium hover:opacity-90 transition">
+              FIND MORE ABOUT US
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    {/* Text Content */}
-    <div className="w-full md:w-1/2 text-center md:text-left">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-        About Coach Me
-      </h2>
-      <p className="text-md md:text-lg text-gray-800 mb-6">
-        Coach Me is your personalized platform for connecting athletes with expert coaches and top-tier teams.
-        Whether you're looking to grow your skills or take your game to the next level, we provide the tools and
-        community to help you succeed.
-      </p>
-      <button className="bg-gray-800 text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition">
-        Find More About Us
-      </button>
-    </div>
-  </div>
-</div>
-
-
 
       {/* What You Get Section */}
-      <div className="w-full bg-white py-16 px-6 md:px-12 text-center">
+      <div className="w-full bg-white py-16 px-6 md:px-12 text-center relative z-20">
         <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
           What You Get
         </p>
@@ -74,18 +74,40 @@ const Home = () => {
           How We Support
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">1-on-1 Coaching</h3>
-            <p className="text-sm text-gray-600">Get matched with a coach for personalized training to elevate your skills.</p>
+        {/* Support Boxes */}
+        <div className="flex justify-center gap-6">
+          <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <img 
+              src="/src/assets/1-on-1.jpg" 
+              alt="1-on-1 Coaching" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">1-ON-1 COACHING</h3>
+              <p className="text-sm text-white w-full text-left">Booking made simple</p>
+            </div>
           </div>
-          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Tryout Listings</h3>
-            <p className="text-sm text-gray-600">Never miss an opportunity. Explore verified tryouts near you.</p>
+          <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <img 
+              src="/src/assets/TryoutListings.jpg" 
+              alt="Tryout Listings" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">TRYOUT LISTINGS</h3>
+              <p className="text-sm text-white w-full text-left">Discover tryouts and teams that match your level</p>
+            </div>
           </div>
-          <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Progress with Purpose</h3>
-            <p className="text-sm text-gray-600">Track your progress and build a roadmap toward your athletic goals.</p>
+          <div className="relative w-[366px] h-[366px] overflow-hidden" style={{ borderRadius: '50px' }}>
+            <img 
+              src="/src/assets/ProgressWithPurpose.jpg" 
+              alt="Progress with Purpose" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-start justify-start p-6">
+              <h3 className="text-xl font-semibold mb-2 text-[#FFDB8C] w-full text-left">PROGRESS WITH PURPOSE</h3>
+              <p className="text-sm text-white w-full text-left">Get personalized coach notes after each session to focus your training at home</p>
+            </div>
           </div>
         </div>
       </div>
@@ -93,79 +115,80 @@ const Home = () => {
       {/* How It Works Section */}
       <div className="w-full bg-white py-20 px-4 md:px-12">
         <div className="flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-12">
-          {/* Left: Placeholder Image */}
+          {/* Left: Image */}
           <div className="w-full md:w-1/2">
-            <div className="bg-gray-300 w-full h-64 md:h-[400px] rounded-xl flex items-center justify-center text-gray-600 text-xl">
-              Placeholder Image
-            </div>
+            <img 
+              src="/src/assets/CoachingService.png" 
+              alt="Coaching Service" 
+              className="w-[537px] h-[500px] object-cover rounded-[50px]"
+            />
           </div>
-
           {/* Right: Steps */}
           <div className="w-full md:w-1/2">
             <p className="text-sm text-[#FFDB8C] font-medium uppercase tracking-wide mb-2">
               How it works
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-              Get our coaching service
+              Get Our Coaching Service
             </h2>
 
             <div className="space-y-6">
               {/* Step 1 */}
-              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+              <div className="bg-[#F5F5F5] border border-[#C4C4C4] p-4 flex items-center gap-4 relative">
+                <div className="bg-[#FFDB8C] text-white font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg absolute -left-5">
                   1
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Sign Up</h3>
-                  <p className="text-sm text-gray-700">Create your athlete or coach profile in minutes.</p>
+                <div className="ml-8">
+                  <h3 className="text-lg font-semibold text-black">Sign Up</h3>
+                  <p className="text-sm text-black">Create an account to have access to the best coaches and teams near you.</p>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+              <div className="bg-[#F5F5F5] border border-[#C4C4C4] p-4 flex items-center gap-4 relative">
+                <div className="bg-[#FFDB8C] text-white font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg absolute -left-5">
                   2
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Find Your Perfect Match</h3>
-                  <p className="text-sm text-gray-700">Explore listings or get matched with the right coach or team.</p>
+                <div className="ml-8">
+                  <h3 className="text-lg font-semibold text-black">Find Your Perfect Match</h3>
+                  <p className="text-sm text-black">Connect and explore with the top coaches and teams.</p>
                 </div>
               </div>
 
               {/* Step 3 */}
-              <div className="bg-[#C4C4C4] rounded-xl p-4 flex items-start gap-4 shadow">
-                <div className="bg-[#FFDB8C] text-black font-bold w-10 h-10 rounded-full flex items-center justify-center text-lg">
+              <div className="bg-[#F5F5F5] border border-[#C4C4C4] p-4 flex items-center gap-4 relative">
+                <div className="bg-[#FFDB8C] text-white font-bold w-10 h-10 rounded-[50px] flex items-center justify-center text-lg absolute -left-5">
                   3
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Train, Improve, Succeed</h3>
-                  <p className="text-sm text-gray-700">Start your journey with purpose and measurable progress.</p>
+                <div className="ml-8">
+                  <h3 className="text-lg font-semibold text-black">Train, Improve, Succeed</h3>
+                  <p className="text-sm text-black">Monitor your training progress and advance with expert guidance.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-            {/* Coaches & Clubs CTA Section */}
-            <div className="w-full bg-white py-20 px-4 md:px-12 text-center">
+      {/* Coaches & Clubs CTA Section */}
+      <div className="w-full bg-white py-20 px-4 md:px-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           For Coaches and Clubs
         </h2>
-        <p className="text-md text-gray-700 mb-8">
-          Share your expertise or grow your team — help shape the future of the game.
+        <p className="text-[24px] font-normal mb-8 text-black">
+          Want to grow your client base or fill your team with passionate players?
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-md font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-[50px] text-md font-medium shadow-md hover:scale-105 transition">
             Apply to be a Coach
           </button>
-          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-full text-md font-medium shadow-md hover:scale-105 transition">
+          <button className="bg-[#FFDB8C] text-black px-6 py-3 rounded-[50px] text-md font-medium shadow-md hover:scale-105 transition">
             Post Your Team Tryouts
           </button>
         </div>
       </div>
-           {/* Founder Section */}
-           <div className="w-full bg-white py-20 px-4 md:px-12">
+      {/* Founder Section */}
+      <div className="w-full bg-white py-20 pb-40 px-4 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12">
           {/* Left Text Block */}
           <div className="w-full md:w-1/2">
@@ -175,29 +198,38 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Why Coach Me?
             </h2>
-            <p className="text-md text-gray-700 mb-6">
-              With 15+ years as an athlete, I experienced firsthand the struggle of constantly searching for the right coaches and teams.
+            <p className="text-md text-gray-700 mb-0">
+              "With 15+ years as an athlete, I experienced firsthand the struggle of constantly searching for the right coaches and teams.
               If I had found the right coaches and teammates sooner, I could have accelerated my growth and avoided wasted time.
-              That’s why I created CoachMe—to give young athletes an easier way to connect with the right coaches and teams from the start,
-              so they can train smarter, improve faster, and reach their full potential.
+              That's why I created CoachMe—to give young athletes an easier way to connect with the right coaches and teams from the start,
+              so they can train smarter, improve faster, and reach their full potential."
             </p>
-            <p className="text-md font-bold text-black">– Alex Vo</p>
+            <p className="text-md font-bold text-black text-right -mt-2">– Alex Vo</p>
           </div>
 
-          {/* Right Placeholder Box */}
-          <div className="w-full md:w-1/2 relative">
-            <div className="w-full h-72 bg-gray-300 rounded-xl shadow-md flex items-center justify-center text-gray-600 text-xl">
-              Founder Placeholder
-            </div>
-            <div className="absolute bottom-[-20px] right-[-20px] w-24 h-24 bg-gray-400 rounded-full flex items-center justify-center text-sm text-white shadow-lg">
-              Logo
+          {/* Right Image Block */}
+          <div className="w-full md:w-1/2 relative flex justify-end">
+            <div className="relative w-full max-w-[477px] flex justify-end">
+              <div className="relative w-[477px]">
+                <img 
+                  src="/src/assets/AlexVo1.jpg" 
+                  alt="Alex Vo" 
+                  className="w-full h-[488px] object-cover rounded-[50px]"
+                  style={{ objectPosition: '70% 50%' }}
+                />
+                <img 
+                  src="/src/assets/AlexVo2.jpg" 
+                  alt="Alex Vo Logo" 
+                  className="absolute bottom-[-130px] right-[-130px] w-[270px] h-[270px] object-cover rounded-[50px]"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <Footer />
     </>
-    
   );
 };
 
