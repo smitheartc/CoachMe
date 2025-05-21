@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./CoachMe_Backend/database"
+    ]
+}

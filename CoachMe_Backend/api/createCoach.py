@@ -1,6 +1,8 @@
 from flask_restful import Resource, reqparse
-from prisma.models import Coach
-from prisma.errors import PrismaError
+from modelspeewee import Coach
+from datetime import datetime
+from playhouse.shortcuts import model_to_dict
+from peewee import IntegrityError
 
 class CoachApi(Resource):
     def post(self):
@@ -13,31 +15,36 @@ class CoachApi(Resource):
         parser.add_argument('sport', type=str, required=True, help="Sport is required")
         parser.add_argument('speciality', type=str, required=True, help="Speciality is required")
         parser.add_argument('rate', type=float, required=True, help="Rate is required")
-        # image and createdAt are optional/auto-handled
 
         args = parser.parse_args()
 
         try:
-            coach = Coach.prisma().create(
-                data={
-                    'email': args['email'],
-                    'name': args['name'],
-                    'location1': args['location1'],
-                    'location2': args['location2'],
-                    'blurb': args['blurb'],
-                    'sport': args['sport'],
-                    'speciality': args['speciality'],
-                    'rate': args['rate']
-                    # 'image': ... (optional: handle if you support image upload)
-                }
+            coach = Coach.create(
+                email=args['email'],
+                name=args['name'],
+                location1=args['location1'],
+                location2=args['location2'],
+                blurb=args['blurb'],
+                sport=args['sport'],
+                speciality=args['speciality'],
+                rate=args['rate'],
+                created_at=datetime.now()
+                # You can later add 'image' if image uploads are supported
             )
+
             return {
                 'message': 'Coach created successfully',
-                'coach': coach
+                'coach': model_to_dict(coach, exclude=[Coach.image])
             }, 201
 
-        except PrismaError as e:
+        except IntegrityError as e:
             return {
-                'message': 'Failed to create coach',
+                'message': 'Failed to create coach — likely due to duplicate email',
+                'error': str(e)
+            }, 400
+
+        except Exception as e:
+            return {
+                'message': 'An unexpected error occurred',
                 'error': str(e)
             }, 500
