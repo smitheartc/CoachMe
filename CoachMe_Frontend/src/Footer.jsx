@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Logo and Description */}
           <div className="md:w-1/3 text-left">
-            <img src={logo} className="h-20 md:h-24 w-auto mb-6 -ml-8" alt="Logo" />
+            <img src={logo} className="h-20 md:h-24 w-auto mb-2 -ml-8 -mt-8" alt="Logo" />
             <p className="text-black text-[17px]">
               Find the perfect coach, Join the right team, Take your game to the next level.
             </p>
