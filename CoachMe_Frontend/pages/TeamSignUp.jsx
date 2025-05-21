@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SignUp3 = ({ onNext }) => {
+const TeamSignUp = ({ onNext }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,7 +20,6 @@ const SignUp3 = ({ onNext }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add validation here if needed
     onNext(formData);
   };
 
@@ -129,4 +128,4 @@ const SignUp3 = ({ onNext }) => {
   );
 };
 
-export default SignUp3;
+export default TeamSignUp;

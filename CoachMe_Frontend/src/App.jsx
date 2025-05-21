@@ -12,11 +12,12 @@ import ClientCoachView from '../pages/ClientCoachView.jsx'
 import CoachSignup from '../pages/CoachSignup.jsx'
 import SignUp from '../pages/SignUp.jsx'
 import SignUp2 from '../pages/SignUp2.jsx'
-import SignUp3 from '../pages/SignUp3.jsx'
+import SignUp3 from '../pages/TeamSignUp.jsx'
 import AtheleteSignUp from '../pages/AtheleteSignUp.jsx'
 import About from '../pages/About.jsx'
 
 import { Routes, Route } from 'react-router-dom'
+import TeamSignUp from '../pages/TeamSignUp.jsx'
 
 function App() {
   const queryClient = new QueryClient()
@@ -34,7 +35,7 @@ function App() {
         <Route path='/coachview' element={<ClientCoachView />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signup2' element={<SignUp2 />} />
-        <Route path='/signup3' element={<SignUp3 />} />
+        <Route path='/signup3' element={<TeamSignUp />} />
         <Route path='/atheletesignup' element={<AtheleteSignUp />} />
       </Routes>
     </QueryClientProvider>
