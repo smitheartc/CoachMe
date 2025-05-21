@@ -217,7 +217,7 @@ const Home = () => {
           {/* Right Image Block */}
           <div className="w-full md:w-1/2 relative flex justify-end">
             <div className="relative w-full max-w-[477px] flex justify-end">
-              <div className="relative w-[477px]">
+              <div className="relative w-full md:w-[477px]">
                 <img
                   src="/src/assets/AlexVo1.jpg"
                   alt="Alex Vo"
@@ -227,7 +227,7 @@ const Home = () => {
                 <img 
                   src="/src/assets/AlexVo2.jpg" 
                   alt="Alex Vo Logo" 
-                  className="absolute bottom-[-130px] right-[-130px] w-[270px] h-[270px] object-cover rounded-[50px]"
+                  className="absolute bottom-[-100px] right-[-100px] w-[200px] h-[200px] md:w-[270px] md:h-[270px] object-cover rounded-[50px]"
                 />
               </div>
             </div>
