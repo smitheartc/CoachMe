@@ -227,7 +227,7 @@ const Home = () => {
                 <img 
                   src="/src/assets/AlexVo2.jpg" 
                   alt="Alex Vo Logo" 
-                  className="absolute bottom-[-100px] right-[-100px] w-[200px] h-[200px] md:w-[270px] md:h-[270px] object-cover rounded-[50px]"
+                  className="absolute bottom-[-70px] right-[-70px] w-[200px] h-[200px] md:w-[270px] md:h-[270px] object-cover rounded-[50px]"
                 />
               </div>
             </div>
