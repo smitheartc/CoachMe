@@ -36,6 +36,7 @@ export default function Navbar() {
           PROFILE
         </Link>
         <Link
+          to="/signup"
           className="px-4 py-2 rounded focus:outline-none text-[20px]"
         >
           LOG OUT
