@@ -37,7 +37,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50"
+                className="w-full border rounded-md p-2 bg-gray-50 text-black"
                 required
               />
             </div>
@@ -48,7 +48,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50"
+                className="w-full border rounded-md p-2 bg-gray-50 text-black"
                 required
               />
             </div>
@@ -61,7 +61,7 @@ const TeamSignUp = ({ onNext }) => {
               name="clubName"
               value={formData.clubName}
               onChange={handleChange}
-              className="w-full border rounded-md p-2 bg-gray-50"
+              className="w-full border rounded-md p-2 bg-gray-50 text-black"
               required
             />
           </div>
@@ -74,7 +74,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50"
+                className="w-full border rounded-md p-2 bg-gray-50 text-black"
                 required
               />
             </div>
@@ -85,7 +85,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50"
+                className="w-full border rounded-md p-2 bg-gray-50 text-black"
                 required
               />
             </div>
@@ -99,7 +99,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="state"
                 value={formData.state}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50"
+                className="w-full border rounded-md p-2 bg-gray-50 text-black"
                 required
               />
             </div>
@@ -110,7 +110,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="zipcode"
                 value={formData.zipcode}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50"
+                className="w-full border rounded-md p-2 bg-gray-50 text-black"
                 required
               />
             </div>

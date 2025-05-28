@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const SignUp2 = ({ onNext }) => {
+const SignUp2 = () => {
   const [selectedRole, setSelectedRole] = useState(null)
+  const navigate = useNavigate()
 
   const roles = [
     { id: 'athlete', label: 'Athlete' },
@@ -11,8 +13,13 @@ const SignUp2 = ({ onNext }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (selectedRole) {
-      onNext(selectedRole)
+
+    if (selectedRole === 'athlete') {
+      navigate('/atheletesignup')
+    } else if (selectedRole === 'coach') {
+      navigate('/coachsignup')
+    } else if (selectedRole === 'club') {
+      navigate('/signup3') // TeamSignUp file
     }
   }
 
@@ -22,7 +29,7 @@ const SignUp2 = ({ onNext }) => {
 
         <div>
           <h2 className="text-lg font-medium text-gray-700 mb-6">2nd Step: Are you a...</h2>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-3 gap-4">
               {roles.map((role) => (
@@ -40,7 +47,7 @@ const SignUp2 = ({ onNext }) => {
                 </button>
               ))}
             </div>
-            
+
             <button
               type="submit"
               disabled={!selectedRole}

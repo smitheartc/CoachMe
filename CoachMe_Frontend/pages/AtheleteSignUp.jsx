@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const AtheleteSignUp = ({ onNext }) => {
+const AtheleteSignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -8,6 +9,8 @@ const AtheleteSignUp = ({ onNext }) => {
     sport: '',
     position: ''
   })
+
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -19,7 +22,8 @@ const AtheleteSignUp = ({ onNext }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    onNext(formData)
+    // Optionally send formData to a backend or store
+    navigate('/home')
   }
 
   return (
@@ -38,7 +42,7 @@ const AtheleteSignUp = ({ onNext }) => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               />
             </div>
@@ -52,7 +56,7 @@ const AtheleteSignUp = ({ onNext }) => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               />
             </div>
@@ -68,7 +72,7 @@ const AtheleteSignUp = ({ onNext }) => {
               name="dob"
               value={formData.dob}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -83,7 +87,7 @@ const AtheleteSignUp = ({ onNext }) => {
               name="sport"
               value={formData.sport}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -98,7 +102,7 @@ const AtheleteSignUp = ({ onNext }) => {
               name="position"
               value={formData.position}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
