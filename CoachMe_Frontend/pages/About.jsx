@@ -27,7 +27,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Left: Content */}
             <div className="w-full md:w-1/2">
-              <h2 className="text-[52px] font-bold text-[#8897AD] mb-6">
+              <h2 className="text-[52px] font-bold text-black mb-6">
                 Our Mission
               </h2>
               <p className="text-[30px] text-gray-700 mb-6">
@@ -53,7 +53,7 @@ const About = () => {
       <div className="w-full bg-[#FFDB8C] py-20 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-[52px] font-bold text-[#8897AD] mb-4">
+            <h2 className="text-[52px] font-bold text-black mb-4">
               WHY WE STARTED
             </h2>
             <p className="text-[28px] text-gray-800">
@@ -112,7 +112,7 @@ const About = () => {
       {/* Our Purpose Section */}
       <div className="w-full bg-white py-20 px-4 md:px-12">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-[52px] font-bold text-[#8897AD] text-center mb-12">
+          <h2 className="text-[52px] font-bold text-black text-center mb-12">
             Our Purpose
           </h2>
           <div className="space-y-0">
@@ -142,7 +142,7 @@ const About = () => {
       <div className="w-full bg-[#FFDB8C] py-20 px-4 md:px-12 -mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-[52px] font-bold text-[#8897AD] mb-4">
+            <h2 className="text-[52px] font-bold text-black mb-4">
               What is CoachMe?
             </h2>
             <p className="text-[28px] text-gray-800">
@@ -189,7 +189,7 @@ const About = () => {
       {/* Join Our Journey Section */}
       <div className="w-full bg-white py-20 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-[52px] font-bold text-[#8897AD] mb-8">
+          <h2 className="text-[52px] font-bold text-black mb-8">
             Join Our Journey
           </h2>
           <div className="w-full bg-white border border-[#8897AD] rounded-[25px] flex flex-col items-center justify-center p-12">
