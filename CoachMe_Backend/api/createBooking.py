@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from models import Booking, Client, Coach
+from modelspeewee import Booking, Client, Coach
 from datetime import datetime
 
 class bookingApi(Resource):
