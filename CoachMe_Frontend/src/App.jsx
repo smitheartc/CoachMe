@@ -21,7 +21,7 @@ import { Routes, Route } from 'react-router-dom'
 function App() {
   const queryClient = new QueryClient()
   const location = useLocation()
-  const isDashboard = location.pathname === '/dashboard'
+  const isDashboard = location.pathname.startsWith('/dashboard')
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -30,7 +30,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/coachfinder' element={<CoachListing />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard/*' element={<Dashboard />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/coachdash' element={<CoachDash />} />
         <Route path='/coachview' element={<ClientCoachView />} />
