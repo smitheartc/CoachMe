@@ -1,6 +1,7 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Navbar from './Navbar'
+import { useLocation } from 'react-router-dom'
 
 // pages
 import Home from '../pages/Home.jsx'
@@ -19,10 +20,12 @@ import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const queryClient = new QueryClient()
+  const location = useLocation()
+  const isDashboard = location.pathname === '/dashboard'
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Navbar />
+      {!isDashboard && <Navbar />}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
