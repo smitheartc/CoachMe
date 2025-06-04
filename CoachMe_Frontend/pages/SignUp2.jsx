@@ -24,11 +24,11 @@ const SignUp2 = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-sm p-8">
-
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
         <div>
-          <h2 className="text-lg font-medium text-gray-700 mb-6">2nd Step: Are you a...</h2>
+          <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>
+            2nd Step: Are you a...
+          </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-3 gap-4">
@@ -62,7 +62,6 @@ const SignUp2 = () => {
           </form>
         </div>
       </div>
-    </div>
   )
 }
 
