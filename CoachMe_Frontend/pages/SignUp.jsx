@@ -50,8 +50,13 @@ const SignUp = () => {
           </div>
           
           <div className="space-y-3">
-            <button className="w-[388px] h-[48px] py-2 border border-gray-300 rounded-[12px] px-3 bg-blue-50 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-              Sign in with Google
+            <button className="w-[388px] h-[48px] py-2 border border-gray-300 rounded-[12px] px-3 bg-blue-50 flex justify-center items-center gap-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+              <img
+                  src="/src/assets/Google.png" 
+                  alt="Google"
+                  className="w-5 h-5"
+              />
+              <span>Sign in with Google</span>
             </button>
           </div>
         </div>
