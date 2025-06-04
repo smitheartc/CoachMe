@@ -37,7 +37,7 @@ const SignUp2 = () => {
                   key={role.id}
                   type="button"
                   onClick={() => setSelectedRole(role.id)}
-                  className={`py-3 px-4 border rounded-md transition duration-200 text-black ${
+                  className={`w-[108px] h-[36px] px-4 border font-semibold rounded-[28px] bg-[#D9D9D9] transition duration-200 justify-center text-center text-black ${
                     selectedRole === role.id
                       ? 'bg-gray-100 border-gray-300'
                       : 'border-gray-200 hover:bg-gray-50'
@@ -51,9 +51,9 @@ const SignUp2 = () => {
             <button
               type="submit"
               disabled={!selectedRole}
-              className={`w-full py-2 px-4 rounded-md font-medium transition duration-200 ${
+              className={`w-[111px] h-[37px] py-2 px-4 rounded-[28px] font-semibold bg-[#D9D9D9] transition duration-200 mx-auto flex justify-center items-center text-black${
                 selectedRole
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                  ? 'bg-blue-600 hover:bg-[#D9D9D9] text-white'
                   : 'bg-gray-200 text-gray-500 cursor-not-allowed'
               }`}
             >
