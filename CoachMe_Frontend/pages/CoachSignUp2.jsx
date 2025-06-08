@@ -8,9 +8,6 @@ const CoachSignup = () => {
 
   // Form validation schema
   const validationSchema = Yup.object({
-    firstName: Yup.string().required('First name is required'),
-    lastName: Yup.string().required('Last name is required'),
-    location: Yup.string().required('Location is required'),
     about: Yup.string().required('Please describe yourself').max(500, 'Description too long'),
     sport: Yup.string().required('Sport is required'),
     experience: Yup.string().required('Experience is required'),
@@ -20,9 +17,6 @@ const CoachSignup = () => {
 
   const formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
-      location: '',
       about: '',
       sport: '',
       experience: '',
@@ -40,65 +34,9 @@ const CoachSignup = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>3rd Step: Information</h2>
+      <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>4th Step: Coach Questions</h2>
       
-      <form onSubmit={formik.handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="firstName" className=" w-[210px] block text-sm font-semibold text-gray-700 ">
-              First Name
-            </label>
-            <input
-              id="firstName"
-              name="firstName"
-              type="text"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.firstName}
-              className="mt-1 block w-full rounded-md bg-blue-50 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
-            />
-            {formik.touched.firstName && formik.errors.firstName ? (
-              <div className="text-red-500 text-sm">{formik.errors.firstName}</div>
-            ) : null}
-          </div>
-          
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-              Last Name
-            </label>
-            <input
-              id="lastName"
-              name="lastName"
-              type="text"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.lastName}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
-            />
-            {formik.touched.lastName && formik.errors.lastName ? (
-              <div className="text-red-500 text-sm">{formik.errors.lastName}</div>
-            ) : null}
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="location" className="block text-sm font-medium text-gray-700">
-            Location
-          </label>
-          <input
-            id="location"
-            name="location"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.location}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
-          />
-          {formik.touched.location && formik.errors.location ? (
-            <div className="text-red-500 text-sm">{formik.errors.location}</div>
-          ) : null}
-        </div>
-
+      <form onSubmit={formik.handleSubmit} className="space-y-4 w-[436px]">
         <div>
           <label htmlFor="about" className="block text-sm font-medium text-gray-700">
             Describe a little bit about yourself
@@ -110,7 +48,7 @@ const CoachSignup = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.about}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+            className="h-[72px] mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
           />
           {formik.touched.about && formik.errors.about ? (
             <div className="text-red-500 text-sm">{formik.errors.about}</div>
@@ -155,7 +93,7 @@ const CoachSignup = () => {
 
         <div>
           <label htmlFor="specialty" className="block text-sm font-medium text-gray-700">
-            What specialty is your sport?
+            What are your specalities?
           </label>
           <input
             id="specialty"
