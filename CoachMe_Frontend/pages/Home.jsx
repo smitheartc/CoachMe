@@ -215,20 +215,22 @@ const Home = () => {
           </div>
 
           {/* Right Image Block */}
-          <div className="w-full md:w-1/2 relative flex justify-end">
-            <div className="relative w-full max-w-[477px] flex justify-end">
-              <div className="relative w-[477px]">
+          <div className="w-full md:w-1/2">
+            <div className="relative" style={{ paddingBottom: '100px' }}>
+              <div className="relative w-full aspect-[1/1] max-w-[477px] mx-auto">
                 <img
                   src="/src/assets/AlexVo1.jpg"
                   alt="Alex Vo"
-                  className="w-full h-[488px] object-cover rounded-[50px]"
+                  className="w-full h-full object-cover rounded-[50px]"
                   style={{ objectPosition: '70% 50%' }}
                 />
-                <img 
-                  src="/src/assets/AlexVo2.jpg" 
-                  alt="Alex Vo Logo" 
-                  className="absolute bottom-[-130px] right-[-130px] w-[270px] h-[270px] object-cover rounded-[50px]"
-                />
+                <div className="absolute -bottom-[100px] -right-[100px] w-[270px] h-[270px]">
+                  <img 
+                    src="/src/assets/AlexVo2.jpg" 
+                    alt="Alex Vo Logo" 
+                    className="w-full h-full object-cover rounded-[50px]"
+                  />
+                </div>
               </div>
             </div>
           </div>
