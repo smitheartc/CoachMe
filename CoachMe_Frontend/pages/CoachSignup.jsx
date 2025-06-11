@@ -73,7 +73,7 @@ const CoachSignup = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.lastName}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+              className="mt-1 block w-full rounded-md bg-blue-50 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
             />
             {formik.touched.lastName && formik.errors.lastName ? (
               <div className="text-red-500 text-sm">{formik.errors.lastName}</div>
@@ -82,7 +82,7 @@ const CoachSignup = () => {
         </div>
 
         <div>
-          <label htmlFor="location" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="location" className="block text-sm font-medium text-[#0C1421]">
             Location
           </label>
           <input
@@ -189,7 +189,7 @@ const CoachSignup = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-[111px] h-[37px] bg-[#D9D9D9] text-black rounded-[28px] font-semibold flex justify-center items-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Next
           </button>
