@@ -24,20 +24,19 @@ const TeamSignUp = ({ onNext }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-lg font-medium text-gray-700 mb-6">Team Sign Up</h2>
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
+        <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>3rd Step: Information</h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+              <label htmlFor="firstname" className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
               <input
                 type="text"
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50 text-black"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
@@ -48,20 +47,20 @@ const TeamSignUp = ({ onNext }) => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50 text-black"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Club Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">What is your club name?</label>
             <input
               type="text"
               name="clubName"
               value={formData.clubName}
               onChange={handleChange}
-              className="w-full border rounded-md p-2 bg-gray-50 text-black"
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               required
             />
           </div>
@@ -74,7 +73,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50 text-black"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
@@ -85,7 +84,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50 text-black"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
@@ -99,7 +98,7 @@ const TeamSignUp = ({ onNext }) => {
                 name="state"
                 value={formData.state}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50 text-black"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
@@ -110,21 +109,22 @@ const TeamSignUp = ({ onNext }) => {
                 name="zipcode"
                 value={formData.zipcode}
                 onChange={handleChange}
-                className="w-full border rounded-md p-2 bg-gray-50 text-black"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
           </div>
 
+          <div className="flex justify-end">
           <button
             type="submit"
-            className="w-full py-2 px-4 rounded-md font-medium bg-blue-600 hover:bg-blue-700 text-white transition duration-200"
+            className="w-[111px] h-[37px] bg-[#D9D9D9] text-black rounded-[28px] font-semibold flex justify-center items-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Next
           </button>
+        </div>
         </form>
       </div>
-    </div>
   );
 };
 

@@ -17,6 +17,8 @@ import AtheleteSignUp from '../pages/AtheleteSignUp.jsx'
 import AtheleteSignUp2 from '../pages/AtheleteSignUp2.jsx'
 import About from '../pages/About.jsx'
 import CoachSignup2 from '../pages/CoachSignUp2.jsx'
+import TeamSignUp from '../pages/TeamSignUp.jsx'
+import TeamSignUp2 from '../pages/TeamSignUp2.jsx'
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -42,6 +44,8 @@ function App() {
         <Route path='/atheletesignup2' element={<AtheleteSignUp2 />} />
         <Route path='/coachsignup' element={<CoachSignup />} />
         <Route path='/coachsignup2' element={<CoachSignup2 />} />
+        <Route path='/teamsignup' element={<TeamSignUp />} />
+        <Route path='/teamsignup2' element={<TeamSignUp2 />} />
       </Routes>
     </QueryClientProvider>
   )
