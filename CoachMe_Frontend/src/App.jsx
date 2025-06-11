@@ -14,6 +14,7 @@ import CoachSignup from '../pages/CoachSignup.jsx'
 import SignUp from '../pages/SignUp.jsx'
 import SignUp2 from '../pages/SignUp2.jsx'
 import AtheleteSignUp from '../pages/AtheleteSignUp.jsx'
+import AtheleteSignUp2 from '../pages/AtheleteSignUp2.jsx'
 import About from '../pages/About.jsx'
 import CoachSignup2 from '../pages/CoachSignUp2.jsx'
 
@@ -38,6 +39,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signup2' element={<SignUp2 />} />
         <Route path='/atheletesignup' element={<AtheleteSignUp />} />
+        <Route path='/atheletesignup2' element={<AtheleteSignUp2 />} />
         <Route path='/coachsignup' element={<CoachSignup />} />
         <Route path='/coachsignup2' element={<CoachSignup2 />} />
       </Routes>
