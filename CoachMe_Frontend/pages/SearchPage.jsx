@@ -1,51 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-<<<<<<< HEAD
-function CoachCard({ userID }) {
-  const { isPending, isError, data, error } = useQuery({
-    queryKey: ["key", userID],
-    queryFn: async () => {
-      const data = await axios.post("http://127.0.0.1:5000/coachFinder/data/", {
-        userID,
-      });
-      console.log(data.data);
-      return data;
-    },
-  });
-
-  if (isPending) {
-    return (
-      <div className="border p-4 bg-orange-300 rounded shadow-md text-black font-bold">
-        <span>Loading...</span>
-      </div>
-    );
-  }
-
-  if (isError) {
-    return <span className="text-black">Error: {error.message}</span>;
-  }
-
-  return (
-    <div className="border p-4 bg-orange-300 rounded shadow-md text-black font-bold">
-      <div className="h-24 bg-gray-300 flex items-center justify-center">
-        <img
-          src={"data:image/jpg;base64," + data.data.image}
-          alt="Coach"
-        />
-      </div>
-      <h4 className="mt-2">{data.data.name}</h4>
-      <p>{data.data.sport}</p>
-      <p>{data.data.blurb}</p>
-      <p>Rate: ${data.data.rate}/hr</p>
-      <Link
-        className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 text-black font-bold"
-        to="/coachview"
-        state={data.data}
-      >
-        View Details
-      </Link>
-=======
 function CoachCard({ name, sport, rate }) {
   return (
     <div className="flex flex-col">
@@ -58,7 +13,6 @@ function CoachCard({ name, sport, rate }) {
           </div>
         </div>
       </div>
-      
       <div className="mt-4 w-[361px]">
         <p className="text-black mb-2">{sport}</p>
         <p className="text-black mb-4 break-words">
@@ -72,7 +26,6 @@ function CoachCard({ name, sport, rate }) {
           View More Details
         </Link>
       </div>
->>>>>>> 0e66758e9be3057aceecfb117673c3fe884151ec
     </div>
   );
 }
@@ -101,10 +54,8 @@ export default function CoachListing() {
                 <p className="font-medium text-lg">Sports</p>
               </div>
             </div>
-
             {/* Divider */}
             <div className="h-14 w-[2px] bg-[#718EBF] mx-8"></div>
-
             {/* Specialty Section */}
             <div className="flex items-center gap-4">
               <img src="/src/assets/batter.png" alt="Specialty" className="w-10 h-10" />
@@ -113,10 +64,8 @@ export default function CoachListing() {
                 <p className="font-medium text-lg">Position</p>
               </div>
             </div>
-
             {/* Divider */}
             <div className="h-14 w-[2px] bg-[#718EBF] mx-8"></div>
-
             {/* Location Section */}
             <div className="flex items-center gap-4">
               <img src="/src/assets/location.png" alt="Location" className="w-10 h-10" />
@@ -125,14 +74,12 @@ export default function CoachListing() {
                 <p className="font-medium text-lg">Near you</p>
               </div>
             </div>
-
             {/* Search Button */}
             <button className="ml-auto bg-[#718EBF] text-white px-8 py-3 rounded-[50px] font-medium text-lg">
               Search
             </button>
           </div>
         </div>
-
         {/* Sort and Filter Section */}
         <div className="flex justify-between items-center mt-8 w-[1000px] mx-auto">
           {/* Sort Section */}
@@ -142,7 +89,6 @@ export default function CoachListing() {
               <span className="text-gray-800">Recommended</span>
             </div>
           </div>
-
           {/* Filter Section */}
           <div className="flex items-center gap-4">
             <span className="text-gray-700 font-medium">Filter:</span>
@@ -159,7 +105,6 @@ export default function CoachListing() {
             </div>
           </div>
         </div>
-
         <div className="grid grid-cols-3 gap-x-4 gap-y-12 mt-8 justify-items-center max-w-[1200px] mx-auto">
           {dummyCoaches.map((coach, index) => (
             <CoachCard
