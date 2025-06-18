@@ -1,118 +1,171 @@
-import { useState } from 'react'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
-const AtheleteSignUp = ({ onNext }) => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    dob: '',
-    sport: '',
-    position: ''
-  })
+const CoachSignup = () => {
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required('First name is required'),
+    lastName: Yup.string().required('Last name is required'),
+    dob: Yup.date().required('Date of birth is required'),
+    address: Yup.string().required('Present address is required'),
+    city: Yup.string().required('City is required'),
+    state: Yup.string().required('State is required'),
+    zip: Yup.string().required('Zip code is required'),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    onNext(formData)
-  }
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      dob: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+      navigate('/dashboard');
+    },
+  });
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-sm p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-white p-6">
+      <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>
+        3rd Step: Information
+      </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                First Name
-              </label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                Last Name
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                required
-              />
-            </div>
-          </div>
-
+      <form onSubmit={formik.handleSubmit} className="space-y-4 w-[439px] max-w-xl">
+        <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="dob" className="block text-sm font-medium text-gray-700 mb-1">
-              DOB/Age
-            </label>
+            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
             <input
-              type="date"
-              id="dob"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="sport" className="block text-sm font-medium text-gray-700 mb-1">
-              What sport do you play?
-            </label>
-            <input
+              id="firstName"
+              name="firstName"
               type="text"
-              id="sport"
-              name="sport"
-              value={formData.sport}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              required
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.firstName}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
+            {formik.touched.firstName && formik.errors.firstName && (
+              <div className="text-red-500 text-sm">{formik.errors.firstName}</div>
+            )}
           </div>
 
           <div>
-            <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-1">
-              What position?
-            </label>
+            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
             <input
+              id="lastName"
+              name="lastName"
               type="text"
-              id="position"
-              name="position"
-              value={formData.position}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              required
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.lastName}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
+            {formik.touched.lastName && formik.errors.lastName && (
+              <div className="text-red-500 text-sm">{formik.errors.lastName}</div>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="dob" className="block text-sm font-medium text-gray-700">Date of Birth</label>
+          <input
+            id="dob"
+            name="dob"
+            type="date"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.dob}
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          />
+          {formik.touched.dob && formik.errors.dob && (
+            <div className="text-red-500 text-sm">{formik.errors.dob}</div>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="address" className="block text-sm font-medium text-gray-700">Present Address</label>
+          <input
+            id="address"
+            name="address"
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.address}
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          />
+          {formik.touched.address && formik.errors.address && (
+            <div className="text-red-500 text-sm">{formik.errors.address}</div>
+          )}
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="city" className="block text-sm font-medium text-gray-700">City</label>
+            <input
+              id="city"
+              name="city"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.city}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+            {formik.touched.city && formik.errors.city && (
+              <div className="text-red-500 text-sm">{formik.errors.city}</div>
+            )}
           </div>
 
+          <div>
+            <label htmlFor="state" className="block text-sm font-medium text-gray-700">State</label>
+            <input
+              id="state"
+              name="state"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.state}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+            {formik.touched.state && formik.errors.state && (
+              <div className="text-red-500 text-sm">{formik.errors.state}</div>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="zip" className="block text-sm font-medium text-gray-700">Zip-code</label>
+          <input
+            id="zip"
+            name="zip"
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.zip}
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          />
+          {formik.touched.zip && formik.errors.zip && (
+            <div className="text-red-500 text-sm">{formik.errors.zip}</div>
+          )}
+        </div>
+
+        <div className="flex justify-end">
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200"
+            className="w-[111px] h-[37px] bg-[#D9D9D9] text-black rounded-[28px] font-semibold flex justify-center items-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Next
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default AtheleteSignUp
+export default CoachSignup;

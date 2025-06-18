@@ -1,5 +1,6 @@
-from flask_restful import Api, Resource, reqparse
-from prisma.models import Booking
+from flask_restful import Resource, reqparse
+from modelspeewee import Booking, Client, Coach
+from datetime import datetime
 
 class bookingApi(Resource):
     def post(self):

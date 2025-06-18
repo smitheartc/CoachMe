@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const SignUp2 = ({ onNext }) => {
+const SignUp2 = () => {
   const [selectedRole, setSelectedRole] = useState(null)
+  const navigate = useNavigate()
 
   const roles = [
     { id: 'athlete', label: 'Athlete' },
@@ -11,18 +13,23 @@ const SignUp2 = ({ onNext }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (selectedRole) {
-      onNext(selectedRole)
+
+    if (selectedRole === 'athlete') {
+      navigate('/atheletesignup')
+    } else if (selectedRole === 'coach') {
+      navigate('/coachsignup')
+    } else if (selectedRole === 'club') {
+      navigate('/signup3') // TeamSignUp file
     }
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-sm p-8">
-
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
         <div>
-          <h2 className="text-lg font-medium text-gray-700 mb-6">2nd Step: Are you a...</h2>
-          
+          <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>
+            2nd Step: Are you a...
+          </h2>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-3 gap-4">
               {roles.map((role) => (
@@ -30,7 +37,7 @@ const SignUp2 = ({ onNext }) => {
                   key={role.id}
                   type="button"
                   onClick={() => setSelectedRole(role.id)}
-                  className={`py-3 px-4 border rounded-md transition duration-200 text-black ${
+                  className={`w-[108px] h-[36px] px-4 border font-semibold rounded-[28px] bg-[#D9D9D9] transition duration-200 justify-center text-center text-black ${
                     selectedRole === role.id
                       ? 'bg-gray-100 border-gray-300'
                       : 'border-gray-200 hover:bg-gray-50'
@@ -40,13 +47,13 @@ const SignUp2 = ({ onNext }) => {
                 </button>
               ))}
             </div>
-            
+
             <button
               type="submit"
               disabled={!selectedRole}
-              className={`w-full py-2 px-4 rounded-md font-medium transition duration-200 ${
+              className={`w-[111px] h-[37px] py-2 px-4 rounded-[28px] font-semibold bg-[#D9D9D9] transition duration-200 mx-auto flex justify-center items-center text-black${
                 selectedRole
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                  ? 'bg-blue-600 hover:bg-[#D9D9D9] text-white'
                   : 'bg-gray-200 text-gray-500 cursor-not-allowed'
               }`}
             >
@@ -55,7 +62,6 @@ const SignUp2 = ({ onNext }) => {
           </form>
         </div>
       </div>
-    </div>
   )
 }
 
