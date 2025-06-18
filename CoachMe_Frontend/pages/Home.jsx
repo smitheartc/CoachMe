@@ -14,13 +14,13 @@ const Home = () => {
         }}
       >
         <div className="flex flex-col items-center justify-center mb-8">
-          <h1 className="text-[24px] md:text-[34px] text-white mb-4" style={{ lineHeight: '100%', fontFamily: 'SF Pro Rounded', fontWeight: 400 }}>
+          <h1 className="text-[24px] md:text-[34px] text-white mb-4" style={{ lineHeight: '100%', fontWeight: 400 }}>
             COACHING FOR DREAMERS
           </h1>
-          <h2 className="text-[40px] md:text-[58px] font-[700] text-white mb-4" style={{ lineHeight: '100%' }}>
+          <h2 className="text-[40px] md:text-[58px] text-white mb-4" style={{ lineHeight: '100%', fontWeight: 700 }}>
             Where Athletes Meets Their Match
           </h2>
-          <p className="text-[18px] md:text-[24px] text-white mb-4 whitespace-nowrap" style={{ lineHeight: '100%', fontFamily: 'SF Pro Rounded', fontWeight: 400 }}>
+          <p className="text-[18px] md:text-[24px] text-white mb-4 whitespace-nowrap" style={{ lineHeight: '100%', fontWeight: 400 }}>
             Find the perfect coach, Join the right team, Take your game to the next level.
           </p>
         </div>
