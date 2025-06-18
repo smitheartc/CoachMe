@@ -17,4 +17,7 @@ api.add_resource(searchApi, '/coachFinder/search/')
 api.add_resource(coachApi, '/coachFinder/data/')
 api.add_resource(bookingApi, '/booking/create/')
 
+if __name__ == '__main__':
+    app.run(debug=True, host='127.0.0.1', port=5000)
+
 
