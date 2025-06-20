@@ -2,3 +2,5 @@
 /CoachMe_Backend/__pycache__
 /CoachMe_Backend/api/__pycache__
 # /CoachMe_Backend/database/database.db
+venv/
+venv311/
