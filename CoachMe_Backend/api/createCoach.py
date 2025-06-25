@@ -6,7 +6,8 @@ class CoachApi(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('email', type=str, required=True, help="Email is required")
-        parser.add_argument('name', type=str)
+        parser.add_argument('firstName', type=str)
+        parser.add_arguement('lastName', type=str)
         parser.add_argument('location1', type=float, required=True, help="Location1 (lat) is required")
         parser.add_argument('location2', type=float, required=True, help="Location2 (long) is required")
         parser.add_argument('blurb', type=str, required=True, help="Blurb is required")
@@ -21,7 +22,8 @@ class CoachApi(Resource):
             coach = Coach.prisma().create(
                 data={
                     'email': args['email'],
-                    'name': args['name'],
+                    'firstName': args['firstName'],
+                    'lastName': args['lastName'],
                     'location1': args['location1'],
                     'location2': args['location2'],
                     'blurb': args['blurb'],
