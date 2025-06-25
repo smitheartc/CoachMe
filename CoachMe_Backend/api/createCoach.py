@@ -6,14 +6,16 @@ class CoachApi(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('email', type=str, required=True, help="Email is required")
-        parser.add_argument('firstName', type=str)
-        parser.add_arguement('lastName', type=str)
-        parser.add_argument('location1', type=float, required=True, help="Location1 (lat) is required")
-        parser.add_argument('location2', type=float, required=True, help="Location2 (long) is required")
+        parser.add_argument('firstName', type=str, required=True, help="First Name is required")
+        parser.add_arguement('lastName', type=str, required=True, help="Last Name is required")
+        parser.add_argument('presentAddress', type=float, required=True, help="Present address (lat) is required")
+        parser.add_arguement('city', type=str, required=True, help="City is required")
+        parser.add_arguement('state', type=str, required=True, help="State is required")
+        parser.add_argument('bookingAddress', type=float, required=True, help="Booking Address (long) is required")
         parser.add_argument('blurb', type=str, required=True, help="Blurb is required")
         parser.add_argument('sport', type=str, required=True, help="Sport is required")
         parser.add_argument('speciality', type=str, required=True, help="Speciality is required")
-        parser.add_argument('rate', type=float, required=True, help="Rate is required")
+        parser.add_argument('clubAffiliation', type=str, required=True, help="Club Affiliation is required")
         # image and createdAt are optional/auto-handled
 
         args = parser.parse_args()
@@ -24,12 +26,14 @@ class CoachApi(Resource):
                     'email': args['email'],
                     'firstName': args['firstName'],
                     'lastName': args['lastName'],
-                    'location1': args['location1'],
-                    'location2': args['location2'],
+                    'presentAddress': args['presentAddress'],
+                    'city': args['city'],
+                    'state': args['state'],
+                    'bookingAddress': args['bookingAddress'],
                     'blurb': args['blurb'],
                     'sport': args['sport'],
                     'speciality': args['speciality'],
-                    'rate': args['rate']
+                    'clubAffiliation': args['clubAffiliation']
                     # 'image': ... (optional: handle if you support image upload)
                 }
             )
