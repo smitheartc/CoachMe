@@ -26,13 +26,16 @@ model Coach {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   email     String   @unique
-  name      String?
-  location1 Float
-  location2 Float
+  firstName String?
+  lastName  String
+  presentAddress Float
+  city      String
+  state     String
+  bookingAddress Float
   blurb     String
   sport     String
   speciality String
-  rate      Float
+  clubAffiliation String
   bookings  Booking[]
   image     Bytes?
 }
