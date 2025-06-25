@@ -1,49 +1,36 @@
-from peewee import *
+from prisma import Prisma
 import datetime
 
-# Connect to the database
+prisma=Prisma()
 
-# Use the same database and model definition as in coachCreator.py
+prisma.connect()
 
-db = SqliteDatabase('database.db')
-
-class Coach(Model):
-    id = AutoField()
-    created_at = DateTimeField(default=datetime.datetime.now)
-    email = CharField(unique=True)
-    firstName = CharField()
-    lastName = CharField()
-    presentAddress = FloatField()
-    city = CharField()
-    state = CharField()
-    bookingAddress = FloatField()
-    blurb = TextField()
-    sport = CharField()
-    speciality = CharField()
-    clubAffiliation = CharField()
-    image = BlobField()
-
-    class Meta:
-        database = db
-
-def main():
-    db.connect()
-    for coach in Coach.select():
-        print(f"ID: {coach.id}")
-        print(f"Created At: {coach.created_at}")
-        print(f"Email: {coach.email}")
-        print(f"First Name: {coach.firstName}")
-        print(f"Last Name: {coach.lastName}")
-        print(f"Location: ({coach.presentAddress}, {coach.bookingAddress})")
-        print(f"City: {coach.city}")
-        print(f"State: {coach.state}")
-        print(f"Blurb: {coach.blurb}")
-        print(f"Sport: {coach.sport}")
-        print(f"Speciality: {coach.speciality}")
-        print(f"CLub Affiliation: {coach.clubAffiliation}")
-        print(f"Image Size: {len(coach.image)} bytes")
-        print("-"*40)
-    db.close()
+try:
+        # Query all coaches
+        coaches = prisma.coach.find_many()
+        
+        for coach in coaches:
+            print(f"ID: {coach.id}")
+            print(f"Created At: {coach.createdAt}")
+            print(f"Email: {coach.email}")
+            print(f"First Name: {coach.firstName}")
+            print(f"Last Name: {coach.lastName}")
+            print(f"Location: ({coach.presentAddress}, {coach.bookingAddress})")
+            print(f"City: {coach.city}")
+            print(f"State: {coach.state}")
+            print(f"Blurb: {coach.blurb}")
+            print(f"Sport: {coach.sport}")
+            print(f"Speciality: {coach.speciality}")
+            print(f"Club Affiliation: {coach.clubAffiliation}")
+            if coach.image:
+                print(f"Image Size: {len(coach.image)} bytes")
+            else:
+                print("Image Size: No image")
+            print("-"*40)
+    
+finally:
+    # Always disconnect from the database
+    prisma.disconnect()
 
 if __name__ == "__main__":
     main() 
