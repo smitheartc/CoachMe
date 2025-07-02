@@ -14,12 +14,16 @@ const SignUp2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    // Store the selected role in localStorage
+    localStorage.setItem('signupRole', selectedRole)
+    console.log('Role selected:', selectedRole)
+
     if (selectedRole === 'athlete') {
       navigate('/atheletesignup')
     } else if (selectedRole === 'coach') {
       navigate('/coachsignup')
     } else if (selectedRole === 'club') {
-      navigate('/signup3') // TeamSignUp file
+      navigate('/teamsignup')
     }
   }
 

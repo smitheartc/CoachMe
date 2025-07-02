@@ -1,12 +1,17 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Email submitted:', email)
+    // Store email in localStorage for the signup flow
+    localStorage.setItem('signupEmail', email)
+    console.log('Email saved:', email)
+    // Navigate to role selection
+    navigate('/signup2')
   }
 
   return (

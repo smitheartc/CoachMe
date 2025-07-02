@@ -1,9 +1,20 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-const CoachSignup = () => {
+const AthleteSignup = () => {
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [signupEmail, setSignupEmail] = useState('');
+
+  // Load email from initial signup
+  useEffect(() => {
+    const email = localStorage.getItem('signupEmail');
+    if (email) {
+      setSignupEmail(email);
+    }
+  }, []);
 
   const validationSchema = Yup.object({
     firstName: Yup.string().required('First name is required'),
@@ -26,9 +37,22 @@ const CoachSignup = () => {
       zip: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      navigate('/dashboard');
+    onSubmit: async (values) => {
+      setIsSubmitting(true);
+      try {
+        // Store the first step data in localStorage for the next step
+        const step1Data = {
+          ...values,
+          email: signupEmail, // Include the email from initial signup
+        };
+        localStorage.setItem('athleteSignupStep1', JSON.stringify(step1Data));
+        console.log('Step 1 data saved:', step1Data);
+        navigate('/atheletesignup2');
+      } catch (error) {
+        console.error('Error saving step 1 data:', error);
+      } finally {
+        setIsSubmitting(false);
+      }
     },
   });
 
@@ -37,6 +61,13 @@ const CoachSignup = () => {
       <h2 className="text-[23px] font-semibold text-black mb-4 text-center" style={{ lineHeight: '100%' }}>
         3rd Step: Information
       </h2>
+
+      {/* Show email from previous step */}
+      {signupEmail && (
+        <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded">
+          <p className="text-sm text-blue-800">Email: {signupEmail}</p>
+        </div>
+      )}
 
       <form onSubmit={formik.handleSubmit} className="space-y-4 w-[439px] max-w-xl">
         <div className="grid grid-cols-2 gap-4">
@@ -158,9 +189,10 @@ const CoachSignup = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="w-[111px] h-[37px] bg-[#D9D9D9] text-black rounded-[28px] font-semibold flex justify-center items-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            disabled={isSubmitting}
+            className="w-[111px] h-[37px] bg-[#D9D9D9] text-black rounded-[28px] font-semibold flex justify-center items-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
           >
-            Next
+            {isSubmitting ? 'Saving...' : 'Next'}
           </button>
         </div>
       </form>
@@ -168,4 +200,4 @@ const CoachSignup = () => {
   );
 };
 
-export default CoachSignup;
+export default AthleteSignup;

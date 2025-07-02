@@ -37,6 +37,22 @@ model Coach {
   image     Bytes?
 }
 
+model Team {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  firstName String
+  lastName  String
+  clubName  String
+  email     String   @unique
+  address   String
+  city      String
+  state     String
+  zipcode   String
+  sport     String
+  age       String
+  skill     String
+}
+
 model Booking {
   clientId Int
   coachId  Int
