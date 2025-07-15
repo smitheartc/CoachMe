@@ -61,6 +61,7 @@ def api_signup():
     if user_resp.status_code == 201:
         return jsonify({'success': True, 'user': user_resp.json()})
     else:
+        print("Auth0 error details:", user_resp.text)
         return jsonify({'error': 'Failed to create user', 'details': user_resp.text}), 400
 
 @app.route('/api/login', methods=['POST'])
@@ -79,12 +80,14 @@ def api_login():
         'audience': AUTH0_AUDIENCE,
         'scope': 'openid profile email',
         'client_id': AUTH0_CLIENT_ID,
-        'client_secret': AUTH0_CLIENT_SECRET
+        'client_secret': AUTH0_CLIENT_SECRET,
+        'realm': 'Username-Password-Authentication'  # Explicitly specify the connection
     }
     token_resp = requests.post(token_url, json=token_payload)
     if token_resp.ok:
         return jsonify(token_resp.json())
     else:
+        print("Auth0 login error:", token_resp.text)
         return jsonify({'error': 'Login failed', 'details': token_resp.text}), 401
 
 if __name__ == "__main__":

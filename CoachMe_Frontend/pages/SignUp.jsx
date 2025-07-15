@@ -1,16 +1,20 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
+  const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     setMessage('')
+    setSuccess(false)
     try {
       const resp = await fetch('http://localhost:3000/api/signup', {
         method: 'POST',
@@ -20,8 +24,26 @@ const SignUp = () => {
       const data = await resp.json()
       if (data.success) {
         setMessage('Signup successful! You can now log in.')
+        setSuccess(true)
+        setTimeout(() => navigate('/login'), 1500)
       } else {
-        setMessage(data.error || 'Signup failed.')
+        // Try to parse specific Auth0 error messages
+        let errorMsg = data.error || 'Signup failed.'
+        if (data.details) {
+          try {
+            const details = JSON.parse(data.details)
+            if (details.message && details.message.toLowerCase().includes('password')) {
+              errorMsg = details.message
+            } else if (details.message && details.message.toLowerCase().includes('email')) {
+              if (details.message.includes('format email')) {
+                errorMsg = 'Please enter a valid email address.'
+              } else {
+                errorMsg = details.message
+              }
+            }
+          } catch {}
+        }
+        setMessage(errorMsg)
       }
     } catch (err) {
       setMessage('Signup failed: ' + err.message)
@@ -88,7 +110,11 @@ const SignUp = () => {
             >
               {loading ? 'Signing up...' : 'Sign Up'}
             </button>
-            {message && <div className="text-center text-red-600 mt-2">{message}</div>}
+            <div style={{ minHeight: 28 }}>
+              {message && (
+                <div className={`text-center mt-2 ${success ? 'text-green-600' : 'text-red-600'}`}>{message}</div>
+              )}
+            </div>
           </form>
           <div className="relative flex items-center my-6">
             <div className="flex-grow border-t border-gray-300"></div>
