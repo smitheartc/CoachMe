@@ -28,4 +28,3 @@ class bookingApi(Resource):
             return {'message': 'Booking created successfully', 'booking': booking.dict()}
         except Exception as e:
             return {'error': str(e)}, 500
-        
