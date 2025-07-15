@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^2.2.0"
   }
 }

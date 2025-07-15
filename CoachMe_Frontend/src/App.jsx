@@ -19,6 +19,7 @@ import About from '../pages/About.jsx'
 import CoachSignup2 from '../pages/CoachSignUp2.jsx'
 import TeamSignUp from '../pages/TeamSignUp.jsx'
 import TeamSignUp2 from '../pages/TeamSignUp2.jsx'
+import LoginPage from '../pages/Login.jsx';
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -46,6 +47,7 @@ function App() {
         <Route path='/coachsignup2' element={<CoachSignup2 />} />
         <Route path='/teamsignup' element={<TeamSignUp />} />
         <Route path='/teamsignup2' element={<TeamSignUp2 />} />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
     </QueryClientProvider>
   )
